@@ -539,6 +539,8 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                   <Combobox
                     isAutocomplete
                     isMultiselectable
+                    maxTags={4}
+                    renderExpandTags={(hiddenCount) => `+ ${hiddenCount} more`}
                     listboxAppendToNode={document.body}
                     listboxMaxHeight="400px"
                     listboxZIndex={12000}
@@ -555,16 +557,26 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                       }
                     }}
                   >
-                    {filteredToAdd.length === 0 ? (
+                    {availableToAdd.length === 0 ? (
                       <Option isDisabled value="__no-matches" label="No matches found" />
                     ) : (
-                      filteredToAdd.map((partner) => (
-                        <Option
-                          key={partner.id}
-                          value={partner.id}
-                          label={partner.name}
-                        />
-                      ))
+                      availableToAdd.map((partner) => {
+                        const query = searchValue.trim().toLowerCase()
+                        const matches =
+                          !query || partner.name.toLowerCase().includes(query)
+                        const isSelected = selectedIds.includes(partner.id)
+                        // Keep selected options mounted (hidden) so tags / "+ N more"
+                        // still count them when search filters the list.
+                        if (!matches && !isSelected) return null
+                        return (
+                          <Option
+                            key={partner.id}
+                            value={partner.id}
+                            label={partner.name}
+                            isHidden={!matches}
+                          />
+                        )
+                      })
                     )}
                   </Combobox>
                 </ComboboxField>
