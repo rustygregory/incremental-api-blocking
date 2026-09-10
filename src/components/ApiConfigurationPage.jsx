@@ -481,7 +481,7 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                 </Table.Head>
                 <Table.Body>
                   {partners.length === 0 ? (
-                    <Table.Row>
+                    <Table.Row isHovered={false}>
                       <Table.Cell colSpan={2}>
                         <EmptyCell>
                           <EmptyTitle>No partners with an extension</EmptyTitle>
@@ -493,7 +493,7 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                     </Table.Row>
                   ) : (
                     partners.map((partner) => (
-                      <Table.Row key={partner.id}>
+                      <Table.Row key={partner.id} isHovered={false}>
                         <Table.Cell>{partner.name}</Table.Cell>
                         <Table.Cell>{partner.expirationDate}</Table.Cell>
                       </Table.Row>
