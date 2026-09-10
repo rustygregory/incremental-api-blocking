@@ -220,7 +220,12 @@ const PartnersCount = styled(MD)`
   color: #2f3941;
 `
 
-const EmptyCell = styled.div`
+const TableWrap = styled.div`
+  /* Partners table is display-only — suppress Garden row hover. */
+  [data-garden-id='tables.row']:hover {
+    background-color: transparent !important;
+  }
+`
   padding: 40px 24px;
   text-align: center;
   color: #68737d;
@@ -472,35 +477,37 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                 </Button>
               </PartnersToolbar>
 
-              <Table isReadOnly>
-                <Table.Head>
-                  <Table.HeaderRow>
-                    <Table.HeaderCell>Partner</Table.HeaderCell>
-                    <Table.HeaderCell>Expiration date</Table.HeaderCell>
-                  </Table.HeaderRow>
-                </Table.Head>
-                <Table.Body>
-                  {partners.length === 0 ? (
-                    <Table.Row isHovered={false}>
-                      <Table.Cell colSpan={2}>
-                        <EmptyCell>
-                          <EmptyTitle>No partners with an extension</EmptyTitle>
-                          <SM tag="div">
-                            Add partners to extend Incremental API access for 60 days.
-                          </SM>
-                        </EmptyCell>
-                      </Table.Cell>
-                    </Table.Row>
-                  ) : (
-                    partners.map((partner) => (
-                      <Table.Row key={partner.id} isHovered={false}>
-                        <Table.Cell>{partner.name}</Table.Cell>
-                        <Table.Cell>{partner.expirationDate}</Table.Cell>
+              <TableWrap>
+                <Table isReadOnly>
+                  <Table.Head>
+                    <Table.HeaderRow>
+                      <Table.HeaderCell>Partner</Table.HeaderCell>
+                      <Table.HeaderCell>Expiration date</Table.HeaderCell>
+                    </Table.HeaderRow>
+                  </Table.Head>
+                  <Table.Body>
+                    {partners.length === 0 ? (
+                      <Table.Row>
+                        <Table.Cell colSpan={2}>
+                          <EmptyCell>
+                            <EmptyTitle>No partners with an extension</EmptyTitle>
+                            <SM tag="div">
+                              Add partners to extend Incremental API access for 60 days.
+                            </SM>
+                          </EmptyCell>
+                        </Table.Cell>
                       </Table.Row>
-                    ))
-                  )}
-                </Table.Body>
-              </Table>
+                    ) : (
+                      partners.map((partner) => (
+                        <Table.Row key={partner.id}>
+                          <Table.Cell>{partner.name}</Table.Cell>
+                          <Table.Cell>{partner.expirationDate}</Table.Cell>
+                        </Table.Row>
+                      ))
+                    )}
+                  </Table.Body>
+                </Table>
+              </TableWrap>
             </PartnersPanel>
           )}
         </PartnerExtensionsBlock>
