@@ -310,12 +310,6 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
     [catalog, addedIds],
   )
 
-  const filteredToAdd = useMemo(() => {
-    const query = searchValue.trim().toLowerCase()
-    if (!query) return availableToAdd
-    return availableToAdd.filter((p) => p.name.toLowerCase().includes(query))
-  }, [availableToAdd, searchValue])
-
   const openModal = () => {
     setSelectedIds([])
     setSearchValue('')
