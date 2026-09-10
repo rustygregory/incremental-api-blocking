@@ -472,7 +472,7 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                 </Button>
               </PartnersToolbar>
 
-              <Table>
+              <Table isReadOnly>
                 <Table.Head>
                   <Table.HeaderRow>
                     <Table.HeaderCell>Partner</Table.HeaderCell>
