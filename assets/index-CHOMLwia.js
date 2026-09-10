@@ -1328,14 +1328,20 @@ Error generating stack: `+e.message+`
   padding: 12px 40px 12px 32px;
   border-top: 1px solid #d8dcde;
   background: #ffffff;
+  position: relative;
+  z-index: 1;
 `,LC=({version:e=`v1`})=>{let t=(0,g.useMemo)(()=>cC(e),[e]),n=e===`v2`,[r,i]=(0,g.useState)(!0),[a,o]=(0,g.useState)(!0),[s,c]=(0,g.useState)(!0),[l,u]=(0,g.useState)({v1:{partners:[],partnerExtensions:!1},v2:{partners:[],partnerExtensions:!1}}),{partners:d,partnerExtensions:f}=l[e]??l.v1,[p,m]=(0,g.useState)(!1),[h,_]=(0,g.useState)([]),[v,y]=(0,g.useState)(``),[b,x]=(0,g.useState)(!1),[S,C]=(0,g.useState)(0),w=(0,g.useCallback)((e,t)=>{u(n=>({...n,[e]:{...n[e],...t}}))},[]),T=(0,g.useMemo)(()=>new Set(d.map(e=>e.id)),[d]),E=(0,g.useMemo)(()=>t.filter(e=>!T.has(e.id)),[t,T]),D=(0,g.useMemo)(()=>{let e=v.trim().toLowerCase();return e?E.filter(t=>t.name.toLowerCase().includes(e)):E},[E,v]),O=()=>{_([]),y(``),m(!0)},k=()=>{m(!1),_([]),y(``)},A=e=>{_(t=>t.includes(e)?t.filter(t=>t!==e):[...t,e])},j=()=>{if(h.length===0){k();return}let n=dC(),r=t.filter(e=>h.includes(e.id)&&!T.has(e.id)).map(e=>({id:e.id,name:e.name,expirationDate:n}));if(r.length===0){k();return}w(e,{partners:[...d,...r],partnerExtensions:!0}),k(),C(r.length),x(!0)},M=t=>{w(e,{partnerExtensions:t})};return(0,J.jsxs)(fC,{children:[b&&(0,J.jsx)(iC,{count:S,onClose:()=>x(!1)}),(0,J.jsxs)(pC,{children:[(0,J.jsxs)(mC,{"aria-label":`Breadcrumb`,children:[(0,J.jsx)(`a`,{href:`#`,children:`Apps and integrations`}),(0,J.jsx)(hC,{children:`›`}),(0,J.jsx)(`a`,{href:`#`,children:`APIs`}),(0,J.jsx)(hC,{children:`›`}),(0,J.jsx)(`span`,{children:`API configuration`})]}),(0,J.jsx)(gC,{children:`API configuration`}),(0,J.jsxs)(_C,{children:[`Manage how users can access the Zendesk API.`,` `,(0,J.jsxs)(vC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Learn about managing access`,(0,J.jsx)(yC,{})]})]}),(0,J.jsxs)(_C,{children:[`View the`,` `,(0,J.jsxs)(vC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Zendesk Developer Terms`,(0,J.jsx)(yC,{})]}),`.`]}),(0,J.jsxs)(bC,{children:[(0,J.jsx)(xC,{children:`Zendesk is removing API tokens`}),(0,J.jsxs)(SC,{children:[(0,J.jsx)(`p`,{children:`Active API tokens will stop working on April 30, 2027. To avoid service interruptions:`}),(0,J.jsxs)(`ul`,{children:[(0,J.jsx)(`li`,{children:`Find workflows that use API tokens`}),(0,J.jsx)(`li`,{children:`Migrate those workflows to OAuth`})]}),(0,J.jsx)(vC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:`Learn about transitioning from API tokens`})]})]}),(0,J.jsxs)(CC,{children:[(0,J.jsx)(wC,{children:(0,J.jsxs)(Vf,{checked:r,onChange:()=>i(e=>!e),children:[(0,J.jsx)(Rf,{children:`Password access`}),(0,J.jsx)(xf,{children:`Activate API authentication using an agent's email address and password. Password access is deprecated, this option won't be available again if you disable it now`})]})}),(0,J.jsx)(wC,{children:(0,J.jsxs)(Vf,{checked:a,onChange:()=>o(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow password access for end users`}),(0,J.jsx)(xf,{children:`Allow end users to authenticate API requests with their email and password. When off, end user access is considered anonymous.`})]})}),(0,J.jsx)(wC,{children:(0,J.jsxs)(Vf,{checked:s,onChange:()=>c(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow API token access`}),(0,J.jsx)(xf,{children:`Team members will authenticate API requests using their email address and a token.`})]})})]}),(0,J.jsxs)(TC,{children:[(0,J.jsx)(EC,{children:(0,J.jsx)(wC,{children:(0,J.jsxs)(Vf,{checked:f||d.length>0,disabled:d.length>0,onChange:()=>M(!f),children:[(0,J.jsx)(Rf,{children:`Incremental API partner extensions`}),(0,J.jsx)(xf,{children:`Extend partners' time to migrate their apps from Incremental to Transactional APIs for 60 days.`})]})})}),(f||d.length>0)&&(0,J.jsxs)(DC,{children:[(0,J.jsxs)(OC,{children:[(0,J.jsxs)(kC,{tag:`div`,children:[d.length,` Partners with an extension`]}),(0,J.jsx)(xd,{onClick:O,children:`Add partners`})]}),(0,J.jsxs)(SS,{children:[(0,J.jsx)(SS.Head,{children:(0,J.jsxs)(SS.HeaderRow,{children:[(0,J.jsx)(SS.HeaderCell,{children:`Partner`}),(0,J.jsx)(SS.HeaderCell,{children:`Expiration date`})]})}),(0,J.jsx)(SS.Body,{children:d.length===0?(0,J.jsx)(SS.Row,{children:(0,J.jsx)(SS.Cell,{colSpan:2,children:(0,J.jsxs)(AC,{children:[(0,J.jsx)(jC,{children:`No partners with an extension`}),(0,J.jsx)(go,{tag:`div`,children:`Add partners to extend Incremental API access for 60 days.`})]})})}):d.map(e=>(0,J.jsxs)(SS.Row,{children:[(0,J.jsx)(SS.Cell,{children:e.name}),(0,J.jsx)(SS.Cell,{children:e.expirationDate})]},e.id))})]})]})]})]}),(0,J.jsxs)(IC,{children:[(0,J.jsx)(xd,{isBasic:!0,children:`Cancel`}),(0,J.jsx)(xd,{isPrimary:!0,children:`Save`})]}),p&&(0,J.jsxs)(yx,{onClose:k,children:[(0,J.jsx)(gx,{tag:`h2`,children:`Add partners`}),(0,J.jsx)(px,{"aria-label":`Close modal`}),(0,J.jsxs)(lx,{children:[(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`Select the connected partners that will be allowed to use Incremental APIs for 60 days. Once they are added they will not be removed until the 60 days is complete.`}),E.length===0?(0,J.jsx)(NC,{children:(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`All partners have been added.`})}):n?(0,J.jsx)(MC,{children:(0,J.jsxs)(Oy,{children:[(0,J.jsx)(Ty,{children:`Partners`}),(0,J.jsx)(Cy,{isAutocomplete:!0,isMultiselectable:!0,listboxAppendToNode:document.body,listboxMaxHeight:`400px`,listboxZIndex:12e3,listboxAriaLabel:`Partners`,placeholder:`Search partners`,inputValue:v,selectionValue:h,onChange:({inputValue:e,selectionValue:t})=>{e!==void 0&&y(e),t!==void 0&&_(Array.isArray(t)?t:[])},children:D.length===0?(0,J.jsx)(Xy,{isDisabled:!0,value:`__no-matches`,label:`No matches found`}):D.map(e=>(0,J.jsx)(Xy,{value:e.id,label:e.name},e.id))})]})}):(0,J.jsx)(PC,{children:E.map(e=>(0,J.jsx)(FC,{as:`div`,children:(0,J.jsx)(Bf,{children:(0,J.jsx)(Vf,{checked:h.includes(e.id),onChange:()=>A(e.id),children:(0,J.jsx)(Rf,{children:e.name})})})},e.id))})]}),(0,J.jsxs)(mx,{children:[(0,J.jsx)(hx,{children:(0,J.jsx)(xd,{isBasic:!0,onClick:k,children:`Cancel`})}),(0,J.jsx)(hx,{children:(0,J.jsx)(xd,{isPrimary:!0,onClick:j,children:`Save`})})]})]})]})},RC=V.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  width: 100vw;
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
   background-color: #f8f9f9;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 `,zC=V.div`
   display: flex;
   flex-direction: column;
@@ -1344,6 +1350,7 @@ Error generating stack: `+e.message+`
   width: 100%;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 `,BC=V.div`
   display: flex;
   flex: 1;
@@ -1353,6 +1360,9 @@ Error generating stack: `+e.message+`
   min-height: 0;
 `,VC=V.div`
   display: flex;
+  align-self: stretch;
+  min-height: 0;
+  overflow: hidden;
 `,HC=V.main`
   box-sizing: border-box;
   display: flex;
@@ -1367,4 +1377,5 @@ Error generating stack: `+e.message+`
   align-self: stretch;
   overflow: hidden;
   min-width: 0;
+  min-height: 0;
 `;function UC(){let[e,t]=(0,g.useState)(7),[n,r]=(0,g.useState)(!1),[i,a]=(0,g.useState)(`api-configuration`),[o,s]=(0,g.useState)(null),[c,l]=(0,g.useState)(`v1`);return(0,J.jsx)(ur,{children:(0,J.jsxs)(RC,{children:[(0,J.jsx)(Cl,{title:`Incremental API blocking program`,meta:`Started Sept 2026`,versions:sC,versionId:c,onVersionChange:l,versionLabel:`Version`,commentSlotRef:s}),(0,J.jsxs)(zC,{children:[(0,J.jsx)(Mc,{currentProduct:`admin-center`,onProductChange:()=>{}}),(0,J.jsxs)(BC,{children:[(0,J.jsxs)(VC,{children:[(0,J.jsx)(Jc,{currentProduct:`admin-center`,activeNavItem:e,setActiveNavItem:t,isSubnavExpanded:n,setIsSubnavExpanded:r}),(0,J.jsx)(Qu,{currentItem:i,onSelect:a})]}),(0,J.jsx)(HC,{"data-comment-root":`true`,children:(0,J.jsx)(LC,{version:c})})]})]}),(0,J.jsx)(Ru,{toggleContainer:o,context:{version:c},onRestoreContext:e=>{(e.version===`v1`||e.version===`v2`)&&l(e.version)}})]})})}(0,_.createRoot)(document.getElementById(`root`)).render((0,J.jsx)(g.StrictMode,{children:(0,J.jsx)(UC,{})}));
