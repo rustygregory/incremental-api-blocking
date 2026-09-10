@@ -226,6 +226,8 @@ const TableWrap = styled.div`
     background-color: transparent !important;
   }
 `
+
+const EmptyCell = styled.div`
   padding: 40px 24px;
   text-align: center;
   color: #68737d;
