@@ -10,6 +10,8 @@ const buildDate = [
 
 // https://vite.dev/config/
 export default defineConfig({
+  // GitHub Pages project site: https://rustygregory.github.io/incremental-api-blocking/
+  base: '/incremental-api-blocking/',
   plugins: [react()],
   define: {
     __BUILD_DATE__: JSON.stringify(buildDate),
