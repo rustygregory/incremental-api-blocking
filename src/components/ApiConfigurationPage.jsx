@@ -269,6 +269,8 @@ const Footer = styled.footer`
   padding: 12px 40px 12px 32px;
   border-top: 1px solid #d8dcde;
   background: #ffffff;
+  position: relative;
+  z-index: 1;
 `
 
 export const ApiConfigurationPage = ({ version = 'v1' }) => {

@@ -12,11 +12,15 @@ import './App.css'
 const OuterShell = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  width: 100vw;
+  flex: 1;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
   background-color: #f8f9f9;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 `
 
 const AppShell = styled.div`
@@ -27,6 +31,7 @@ const AppShell = styled.div`
   width: 100%;
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 `
 
 const Workspace = styled.div`
@@ -40,6 +45,9 @@ const Workspace = styled.div`
 
 const NavRails = styled.div`
   display: flex;
+  align-self: stretch;
+  min-height: 0;
+  overflow: hidden;
 `
 
 const Main = styled.main`
@@ -56,6 +64,7 @@ const Main = styled.main`
   align-self: stretch;
   overflow: hidden;
   min-width: 0;
+  min-height: 0;
 `
 
 function App() {
