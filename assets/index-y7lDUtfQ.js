@@ -680,7 +680,7 @@ Error generating stack: `+e.message+`
   border-radius: 8px 0px 0px 0px;
   flex: 1;
   align-self: stretch;
-`;var Xc=9500,Zc=[`January`,`February`,`March`,`April`,`May`,`June`,`July`,`August`,`September`,`October`,`November`,`December`],Qc={January:`Jan`,February:`Feb`,March:`Mar`,April:`Apr`,August:`Aug`,September:`Sept`,October:`Oct`,November:`Nov`,December:`Dec`},$c=(e=>{let[t,n,r]=e.split(`-`).map(Number),i=Zc[n-1];return`${Qc[i]??i} ${r}, ${t}`})(`2026-09-09`),el=V.header`
+`;var Xc=9500,Zc=[`January`,`February`,`March`,`April`,`May`,`June`,`July`,`August`,`September`,`October`,`November`,`December`],Qc={January:`Jan`,February:`Feb`,March:`Mar`,April:`Apr`,August:`Aug`,September:`Sept`,October:`Oct`,November:`Nov`,December:`Dec`},$c=(e=>{let[t,n,r]=e.split(`-`).map(Number),i=Zc[n-1];return`${Qc[i]??i} ${r}, ${t}`})(`2026-09-17`),el=V.header`
   position: relative;
   flex-shrink: 0;
   box-sizing: border-box;
@@ -1178,19 +1178,19 @@ Error generating stack: `+e.message+`
   right: ${40}px;
   z-index: 11000;
   max-width: 360px;
-`;function iC({count:e=1,onClose:t}){return(0,g.useEffect)(()=>{let e=window.setTimeout(t,nC);return()=>window.clearTimeout(e)},[t]),(0,wl.createPortal)((0,J.jsx)(rC,{role:`status`,"aria-live":`polite`,children:(0,J.jsxs)(tC,{type:`success`,children:[(0,J.jsx)(ZS,{children:e===1?`Partner successfully added for 60 days`:`Partners successfully added for 60 days`}),(0,J.jsx)($S,{"aria-label":`Close`,onClick:t})]})}),document.body)}var aC=[{id:`acme-support`,name:`Acme Support`},{id:`northstar-labs`,name:`Northstar Labs`},{id:`bluebird-health`,name:`Bluebird Health`},{id:`contoso-services`,name:`Contoso Services`}],oC=[{id:`acme-support`,name:`Acme Support`},{id:`northstar-labs`,name:`Northstar Labs`},{id:`bluebird-health`,name:`Bluebird Health`},{id:`contoso-services`,name:`Contoso Services`},{id:`apex-digital`,name:`Apex Digital`},{id:`brightline-systems`,name:`Brightline Systems`},{id:`cascade-analytics`,name:`Cascade Analytics`},{id:`cobalt-communications`,name:`Cobalt Communications`},{id:`deltaforge`,name:`Deltaforge`},{id:`evergreen-ops`,name:`Evergreen Ops`},{id:`frontier-metrics`,name:`Frontier Metrics`},{id:`harbor-cloud`,name:`Harbor Cloud`},{id:`ironclad-software`,name:`Ironclad Software`},{id:`juniper-data`,name:`Juniper Data`},{id:`keystone-platforms`,name:`Keystone Platforms`},{id:`lumen-bridge`,name:`Lumen Bridge`},{id:`meridian-tech`,name:`Meridian Tech`},{id:`nimbus-works`,name:`Nimbus Works`},{id:`orbit-solutions`,name:`Orbit Solutions`},{id:`pinnacle-partner`,name:`Pinnacle Partner`},{id:`quantum-relay`,name:`Quantum Relay`},{id:`redwood-integrations`,name:`Redwood Integrations`},{id:`summit-channel`,name:`Summit Channel`},{id:`truenorth-apps`,name:`TrueNorth Apps`},{id:`vertex-alliance`,name:`Vertex Alliance`}],sC=[{id:`v1`,label:`Version 1`,description:`Checkbox modal`},{id:`v2`,label:`Version 2`,description:`Searchable multiselect`}];function cC(e){return e===`v2`?oC:aC}var lC=[`Jan`,`Feb`,`Mar`,`Apr`,`May`,`June`,`July`,`Aug`,`Sept`,`Oct`,`Nov`,`Dec`];function uC(e){return`${lC[e.getMonth()]} ${e.getDate()}, ${e.getFullYear()}`}function dC(e=new Date){let t=new Date(e);return t.setDate(t.getDate()+60),uC(t)}var fC=V.div`
+`;function iC({count:e=1,onClose:t}){return(0,g.useEffect)(()=>{let e=window.setTimeout(t,nC);return()=>window.clearTimeout(e)},[t]),(0,wl.createPortal)((0,J.jsx)(rC,{role:`status`,"aria-live":`polite`,children:(0,J.jsxs)(tC,{type:`success`,children:[(0,J.jsx)(ZS,{children:e===1?`Partner successfully added for 60 days`:`Partners successfully added for 60 days`}),(0,J.jsx)($S,{"aria-label":`Close`,onClick:t})]})}),document.body)}var aC=[{id:`acme-support`,name:`Acme Support`},{id:`northstar-labs`,name:`Northstar Labs`},{id:`bluebird-health`,name:`Bluebird Health`},{id:`contoso-services`,name:`Contoso Services`}],oC=[{id:`acme-support`,name:`Acme Support`},{id:`northstar-labs`,name:`Northstar Labs`},{id:`bluebird-health`,name:`Bluebird Health`},{id:`contoso-services`,name:`Contoso Services`},{id:`apex-digital`,name:`Apex Digital`},{id:`brightline-systems`,name:`Brightline Systems`},{id:`cascade-analytics`,name:`Cascade Analytics`},{id:`cobalt-communications`,name:`Cobalt Communications`},{id:`deltaforge`,name:`Deltaforge`},{id:`evergreen-ops`,name:`Evergreen Ops`},{id:`frontier-metrics`,name:`Frontier Metrics`},{id:`harbor-cloud`,name:`Harbor Cloud`},{id:`ironclad-software`,name:`Ironclad Software`},{id:`juniper-data`,name:`Juniper Data`},{id:`keystone-platforms`,name:`Keystone Platforms`},{id:`lumen-bridge`,name:`Lumen Bridge`},{id:`meridian-tech`,name:`Meridian Tech`},{id:`nimbus-works`,name:`Nimbus Works`},{id:`orbit-solutions`,name:`Orbit Solutions`},{id:`pinnacle-partner`,name:`Pinnacle Partner`},{id:`quantum-relay`,name:`Quantum Relay`},{id:`redwood-integrations`,name:`Redwood Integrations`},{id:`summit-channel`,name:`Summit Channel`},{id:`truenorth-apps`,name:`TrueNorth Apps`},{id:`vertex-alliance`,name:`Vertex Alliance`}],sC=[{id:`v1`,label:`Version 1`,description:`Checkbox modal`},{id:`v2`,label:`Version 2`,description:`Searchable multiselect`}];function cC(e){return e===`v2`?oC:aC}var lC=[`Jan`,`Feb`,`Mar`,`Apr`,`May`,`June`,`July`,`Aug`,`Sept`,`Oct`,`Nov`,`Dec`];function uC(e){return`${lC[e.getMonth()]} ${e.getDate()}, ${e.getFullYear()}`}function dC(e=new Date){let t=new Date(e);return t.setDate(t.getDate()+60),t.setHours(0,0,0,0),t}function fC(e){let t=new Date(e);return t.setHours(23,59,59,999),new Date>t?`Expired`:`Granted`}var pC=V.div`
   display: flex;
   flex-direction: column;
   flex: 1;
   min-height: 0;
   background: #ffffff;
   position: relative;
-`,pC=V.div`
+`,mC=V.div`
   flex: 1;
   min-height: 0;
   overflow: auto;
   padding: 24px 40px 32px 32px;
-`,mC=V.nav`
+`,hC=V.nav`
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 13px;
   color: #68737d;
@@ -1212,9 +1212,9 @@ Error generating stack: `+e.message+`
       text-decoration: underline;
     }
   }
-`,hC=V.span`
+`,gC=V.span`
   color: #c2c8cc;
-`,gC=V.h1`
+`,_C=V.h1`
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 28px;
   font-weight: 600;
@@ -1222,32 +1222,32 @@ Error generating stack: `+e.message+`
   letter-spacing: -0.36px;
   color: #2f3941;
   margin: 0 0 8px;
-`,_C=V.p`
+`,vC=V.p`
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #2f3941;
   margin: 0 0 4px;
-`,vC=V.a`
+`,yC=V.a`
   color: #1f73b7;
   text-decoration: underline;
 
   &:hover {
     color: #144a75;
   }
-`,yC=()=>(0,J.jsxs)(`svg`,{width:`10`,height:`10`,viewBox:`0 0 12 12`,fill:`none`,xmlns:`http://www.w3.org/2000/svg`,"aria-hidden":`true`,style:{marginLeft:2,verticalAlign:`baseline`},children:[(0,J.jsx)(`path`,{d:`M3 3h6v6`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`}),(0,J.jsx)(`path`,{d:`M9 3 3 9`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`})]}),bC=V.div`
+`,bC=()=>(0,J.jsxs)(`svg`,{width:`10`,height:`10`,viewBox:`0 0 12 12`,fill:`none`,xmlns:`http://www.w3.org/2000/svg`,"aria-hidden":`true`,style:{marginLeft:2,verticalAlign:`baseline`},children:[(0,J.jsx)(`path`,{d:`M3 3h6v6`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`}),(0,J.jsx)(`path`,{d:`M9 3 3 9`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`})]}),xC=V.div`
   margin: 24px 0 28px;
   padding: 16px 20px;
   background: #f8f9f9;
   border-radius: 4px;
   border: 1px solid #e9ebed;
-`,xC=V.div`
+`,SC=V.div`
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   color: #2f3941;
   margin-bottom: 8px;
-`,SC=V.div`
+`,CC=V.div`
   font-size: 14px;
   line-height: 20px;
   color: #2f3941;
@@ -1264,59 +1264,59 @@ Error generating stack: `+e.message+`
   li {
     margin-bottom: 2px;
   }
-`,CC=V.div`
+`,wC=V.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
   max-width: 720px;
-`,wC=V(Bf)`
+`,TC=V(Bf)`
   margin: 0;
-`,TC=V.div`
-  margin-top: 24px;
 `,EC=V.div`
-  max-width: 720px;
+  margin-top: 24px;
 `,DC=V.div`
+  max-width: 720px;
+`,OC=V.div`
   margin-top: 16px;
   /* Align with Garden checkbox label text; stretch to the scroll area’s right edge (40px pad). */
   margin-left: 28px;
-`,OC=V.div`
+`,kC=V.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 8px;
-`,kC=V(_o)`
+`,AC=V(_o)`
   margin: 0;
   padding: 0;
   font-weight: 400;
   line-height: 20px;
   color: #2f3941;
-`,AC=V.div`
+`,jC=V.div`
   /* Partners table is display-only — suppress Garden row hover. */
   [data-garden-id='tables.row']:hover {
     background-color: transparent !important;
   }
-`,jC=V.div`
+`,MC=V.div`
   padding: 40px 24px;
   text-align: center;
   color: #68737d;
-`,MC=V.div`
+`,NC=V.div`
   font-size: 14px;
   font-weight: 600;
   color: #2f3941;
   margin-bottom: 4px;
-`,NC=V.div`
-  margin-top: 16px;
 `,PC=V.div`
+  margin-top: 16px;
+`,FC=V.div`
   margin-top: 16px;
   padding: 40px 24px;
   text-align: center;
   border-top: 1px solid #e9ebed;
   color: #2f3941;
-`,FC=V.div`
+`,IC=V.div`
   margin-top: 16px;
   border-top: 1px solid #e9ebed;
-`,IC=V.label`
+`,LC=V.label`
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1324,7 +1324,7 @@ Error generating stack: `+e.message+`
   padding: 10px 0;
   border-bottom: 1px solid #e9ebed;
   cursor: pointer;
-`,LC=V.footer`
+`,RC=V.footer`
   flex-shrink: 0;
   display: flex;
   justify-content: flex-end;
@@ -1335,7 +1335,7 @@ Error generating stack: `+e.message+`
   background: #ffffff;
   position: relative;
   z-index: 1;
-`,RC=({version:e=`v1`})=>{let t=(0,g.useMemo)(()=>cC(e),[e]),n=e===`v2`,[r,i]=(0,g.useState)(!0),[a,o]=(0,g.useState)(!0),[s,c]=(0,g.useState)(!0),[l,u]=(0,g.useState)({v1:{partners:[],partnerExtensions:!1},v2:{partners:[],partnerExtensions:!1}}),{partners:d,partnerExtensions:f}=l[e]??l.v1,[p,m]=(0,g.useState)(!1),[h,_]=(0,g.useState)([]),[v,y]=(0,g.useState)(``),[b,x]=(0,g.useState)(!1),[S,C]=(0,g.useState)(0),w=(0,g.useCallback)((e,t)=>{u(n=>({...n,[e]:{...n[e],...t}}))},[]),T=(0,g.useMemo)(()=>new Set(d.map(e=>e.id)),[d]),E=(0,g.useMemo)(()=>t.filter(e=>!T.has(e.id)),[t,T]),D=()=>{_([]),y(``),m(!0)},O=()=>{m(!1),_([]),y(``)},k=e=>{_(t=>t.includes(e)?t.filter(t=>t!==e):[...t,e])},A=()=>{if(h.length===0){O();return}let n=dC(),r=t.filter(e=>h.includes(e.id)&&!T.has(e.id)).map(e=>({id:e.id,name:e.name,expirationDate:n}));if(r.length===0){O();return}w(e,{partners:[...d,...r],partnerExtensions:!0}),O(),C(r.length),x(!0)},j=t=>{w(e,{partnerExtensions:t})};return(0,J.jsxs)(fC,{children:[b&&(0,J.jsx)(iC,{count:S,onClose:()=>x(!1)}),(0,J.jsxs)(pC,{children:[(0,J.jsxs)(mC,{"aria-label":`Breadcrumb`,children:[(0,J.jsx)(`a`,{href:`#`,children:`Apps and integrations`}),(0,J.jsx)(hC,{children:`›`}),(0,J.jsx)(`a`,{href:`#`,children:`APIs`}),(0,J.jsx)(hC,{children:`›`}),(0,J.jsx)(`span`,{children:`API configuration`})]}),(0,J.jsx)(gC,{children:`API configuration`}),(0,J.jsxs)(_C,{children:[`Manage how users can access the Zendesk API.`,` `,(0,J.jsxs)(vC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Learn about managing access`,(0,J.jsx)(yC,{})]})]}),(0,J.jsxs)(_C,{children:[`View the`,` `,(0,J.jsxs)(vC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Zendesk Developer Terms`,(0,J.jsx)(yC,{})]}),`.`]}),(0,J.jsxs)(bC,{children:[(0,J.jsx)(xC,{children:`Zendesk is removing API tokens`}),(0,J.jsxs)(SC,{children:[(0,J.jsx)(`p`,{children:`Active API tokens will stop working on April 30, 2027. To avoid service interruptions:`}),(0,J.jsxs)(`ul`,{children:[(0,J.jsx)(`li`,{children:`Find workflows that use API tokens`}),(0,J.jsx)(`li`,{children:`Migrate those workflows to OAuth`})]}),(0,J.jsx)(vC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:`Learn about transitioning from API tokens`})]})]}),(0,J.jsxs)(CC,{children:[(0,J.jsx)(wC,{children:(0,J.jsxs)(Vf,{checked:r,onChange:()=>i(e=>!e),children:[(0,J.jsx)(Rf,{children:`Password access`}),(0,J.jsx)(xf,{children:`Activate API authentication using an agent's email address and password. Password access is deprecated, this option won't be available again if you disable it now`})]})}),(0,J.jsx)(wC,{children:(0,J.jsxs)(Vf,{checked:a,onChange:()=>o(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow password access for end users`}),(0,J.jsx)(xf,{children:`Allow end users to authenticate API requests with their email and password. When off, end user access is considered anonymous.`})]})}),(0,J.jsx)(wC,{children:(0,J.jsxs)(Vf,{checked:s,onChange:()=>c(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow API token access`}),(0,J.jsx)(xf,{children:`Team members will authenticate API requests using their email address and a token.`})]})})]}),(0,J.jsxs)(TC,{children:[(0,J.jsx)(EC,{children:(0,J.jsx)(wC,{children:(0,J.jsxs)(Vf,{checked:f||d.length>0,disabled:d.length>0,onChange:()=>j(!f),children:[(0,J.jsx)(Rf,{children:`Incremental API partner extensions`}),(0,J.jsx)(xf,{children:`Extend partners' time to migrate their apps from Incremental to Transactional APIs for 60 days.`})]})})}),(f||d.length>0)&&(0,J.jsxs)(DC,{children:[(0,J.jsxs)(OC,{children:[(0,J.jsxs)(kC,{tag:`div`,children:[d.length,` Partners with an extension`]}),(0,J.jsx)(xd,{onClick:D,children:`Add partners`})]}),(0,J.jsx)(AC,{children:(0,J.jsxs)(SS,{isReadOnly:!0,children:[(0,J.jsx)(SS.Head,{children:(0,J.jsxs)(SS.HeaderRow,{children:[(0,J.jsx)(SS.HeaderCell,{children:`Partner`}),(0,J.jsx)(SS.HeaderCell,{children:`Expiration date`})]})}),(0,J.jsx)(SS.Body,{children:d.length===0?(0,J.jsx)(SS.Row,{children:(0,J.jsx)(SS.Cell,{colSpan:2,children:(0,J.jsxs)(jC,{children:[(0,J.jsx)(MC,{children:`No partners with an extension`}),(0,J.jsx)(go,{tag:`div`,children:`Add partners to extend Incremental API access for 60 days.`})]})})}):d.map(e=>(0,J.jsxs)(SS.Row,{children:[(0,J.jsx)(SS.Cell,{children:e.name}),(0,J.jsx)(SS.Cell,{children:e.expirationDate})]},e.id))})]})})]})]})]}),(0,J.jsxs)(LC,{children:[(0,J.jsx)(xd,{isBasic:!0,children:`Cancel`}),(0,J.jsx)(xd,{isPrimary:!0,children:`Save`})]}),p&&(0,J.jsxs)(yx,{onClose:O,children:[(0,J.jsx)(gx,{tag:`h2`,children:`Add partners`}),(0,J.jsx)(px,{"aria-label":`Close modal`}),(0,J.jsxs)(lx,{children:[(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`Select the connected partners that will be allowed to use Incremental APIs for 60 days. Once they are added they will not be removed until the 60 days is complete.`}),E.length===0?(0,J.jsx)(PC,{children:(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`All partners have been added.`})}):n?(0,J.jsx)(NC,{children:(0,J.jsxs)(Oy,{children:[(0,J.jsx)(Ty,{children:`Partners`}),(0,J.jsx)(Cy,{isAutocomplete:!0,isMultiselectable:!0,maxTags:4,renderExpandTags:e=>`+ ${e} more`,listboxAppendToNode:document.body,listboxMaxHeight:`400px`,listboxZIndex:12e3,listboxAriaLabel:`Partners`,placeholder:`Search partners`,inputValue:v,selectionValue:h,onChange:({inputValue:e,selectionValue:t})=>{e!==void 0&&y(e),t!==void 0&&_(Array.isArray(t)?t:[])},children:E.length===0?(0,J.jsx)(Xy,{isDisabled:!0,value:`__no-matches`,label:`No matches found`}):E.map(e=>{let t=v.trim().toLowerCase(),n=!t||e.name.toLowerCase().includes(t),r=h.includes(e.id);return!n&&!r?null:(0,J.jsx)(Xy,{value:e.id,label:e.name,isHidden:!n},e.id)})})]})}):(0,J.jsx)(FC,{children:E.map(e=>(0,J.jsx)(IC,{as:`div`,children:(0,J.jsx)(Bf,{children:(0,J.jsx)(Vf,{checked:h.includes(e.id),onChange:()=>k(e.id),children:(0,J.jsx)(Rf,{children:e.name})})})},e.id))})]}),(0,J.jsxs)(mx,{children:[(0,J.jsx)(hx,{children:(0,J.jsx)(xd,{isBasic:!0,onClick:O,children:`Cancel`})}),(0,J.jsx)(hx,{children:(0,J.jsx)(xd,{isPrimary:!0,onClick:A,children:`Save`})})]})]})]})},zC=V.div`
+`,zC=({version:e=`v1`})=>{let t=(0,g.useMemo)(()=>cC(e),[e]),n=e===`v2`,[r,i]=(0,g.useState)(!0),[a,o]=(0,g.useState)(!0),[s,c]=(0,g.useState)(!0),[l,u]=(0,g.useState)({v1:{partners:[],partnerExtensions:!1},v2:{partners:[],partnerExtensions:!1}}),{partners:d,partnerExtensions:f}=l[e]??l.v1,[p,m]=(0,g.useState)(!1),[h,_]=(0,g.useState)([]),[v,y]=(0,g.useState)(``),[b,x]=(0,g.useState)(!1),[S,C]=(0,g.useState)(0),w=(0,g.useCallback)((e,t)=>{u(n=>({...n,[e]:{...n[e],...t}}))},[]),T=(0,g.useMemo)(()=>new Set(d.map(e=>e.id)),[d]),E=(0,g.useMemo)(()=>t.filter(e=>!T.has(e.id)),[t,T]),D=()=>{_([]),y(``),m(!0)},O=()=>{m(!1),_([]),y(``)},k=e=>{_(t=>t.includes(e)?t.filter(t=>t!==e):[...t,e])},A=()=>{if(h.length===0){O();return}let n=dC(),r=t.filter(e=>h.includes(e.id)&&!T.has(e.id)).map(e=>({id:e.id,name:e.name,expiresAt:n.toISOString(),expirationDate:uC(n)}));if(r.length===0){O();return}w(e,{partners:[...d,...r],partnerExtensions:!0}),O(),C(r.length),x(!0)},j=t=>{w(e,{partnerExtensions:t})};return(0,J.jsxs)(pC,{children:[b&&(0,J.jsx)(iC,{count:S,onClose:()=>x(!1)}),(0,J.jsxs)(mC,{children:[(0,J.jsxs)(hC,{"aria-label":`Breadcrumb`,children:[(0,J.jsx)(`a`,{href:`#`,children:`Apps and integrations`}),(0,J.jsx)(gC,{children:`›`}),(0,J.jsx)(`a`,{href:`#`,children:`APIs`}),(0,J.jsx)(gC,{children:`›`}),(0,J.jsx)(`span`,{children:`API configuration`})]}),(0,J.jsx)(_C,{children:`API configuration`}),(0,J.jsxs)(vC,{children:[`Manage how users can access the Zendesk API.`,` `,(0,J.jsxs)(yC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Learn about managing access`,(0,J.jsx)(bC,{})]})]}),(0,J.jsxs)(vC,{children:[`View the`,` `,(0,J.jsxs)(yC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Zendesk Developer Terms`,(0,J.jsx)(bC,{})]}),`.`]}),(0,J.jsxs)(xC,{children:[(0,J.jsx)(SC,{children:`Zendesk is removing API tokens`}),(0,J.jsxs)(CC,{children:[(0,J.jsx)(`p`,{children:`Active API tokens will stop working on April 30, 2027. To avoid service interruptions:`}),(0,J.jsxs)(`ul`,{children:[(0,J.jsx)(`li`,{children:`Find workflows that use API tokens`}),(0,J.jsx)(`li`,{children:`Migrate those workflows to OAuth`})]}),(0,J.jsx)(yC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:`Learn about transitioning from API tokens`})]})]}),(0,J.jsxs)(wC,{children:[(0,J.jsx)(TC,{children:(0,J.jsxs)(Vf,{checked:r,onChange:()=>i(e=>!e),children:[(0,J.jsx)(Rf,{children:`Password access`}),(0,J.jsx)(xf,{children:`Activate API authentication using an agent's email address and password. Password access is deprecated, this option won't be available again if you disable it now`})]})}),(0,J.jsx)(TC,{children:(0,J.jsxs)(Vf,{checked:a,onChange:()=>o(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow password access for end users`}),(0,J.jsx)(xf,{children:`Allow end users to authenticate API requests with their email and password. When off, end user access is considered anonymous.`})]})}),(0,J.jsx)(TC,{children:(0,J.jsxs)(Vf,{checked:s,onChange:()=>c(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow API token access`}),(0,J.jsx)(xf,{children:`Team members will authenticate API requests using their email address and a token.`})]})})]}),(0,J.jsxs)(EC,{children:[(0,J.jsx)(DC,{children:(0,J.jsx)(TC,{children:(0,J.jsxs)(Vf,{checked:f||d.length>0,disabled:d.length>0,onChange:()=>j(!f),children:[(0,J.jsx)(Rf,{children:`Incremental API partner extensions`}),(0,J.jsx)(xf,{children:`Extend partners' time to migrate their apps from Incremental to Transactional APIs for 60 days.`})]})})}),(f||d.length>0)&&(0,J.jsxs)(OC,{children:[(0,J.jsxs)(kC,{children:[(0,J.jsxs)(AC,{tag:`div`,children:[d.length,` Partners with an extension`]}),(0,J.jsx)(xd,{onClick:D,children:`Add partners`})]}),(0,J.jsx)(jC,{children:(0,J.jsxs)(SS,{isReadOnly:!0,children:[(0,J.jsx)(SS.Head,{children:(0,J.jsxs)(SS.HeaderRow,{children:[(0,J.jsx)(SS.HeaderCell,{children:`Partner`}),(0,J.jsx)(SS.HeaderCell,{children:`Extension status`}),(0,J.jsx)(SS.HeaderCell,{children:`Extension expires`})]})}),(0,J.jsx)(SS.Body,{children:d.length===0?(0,J.jsx)(SS.Row,{children:(0,J.jsx)(SS.Cell,{colSpan:3,children:(0,J.jsxs)(MC,{children:[(0,J.jsx)(NC,{children:`No partners with an extension`}),(0,J.jsx)(go,{tag:`div`,children:`Add partners to extend Incremental API access for 60 days.`})]})})}):d.map(e=>{let t=fC(e.expiresAt);return(0,J.jsxs)(SS.Row,{children:[(0,J.jsx)(SS.Cell,{children:e.name}),(0,J.jsx)(SS.Cell,{children:(0,J.jsx)(Xg,{hue:t===`Granted`?`green`:`grey`,children:t})}),(0,J.jsx)(SS.Cell,{children:e.expirationDate})]},e.id)})})]})})]})]})]}),(0,J.jsxs)(RC,{children:[(0,J.jsx)(xd,{isBasic:!0,children:`Cancel`}),(0,J.jsx)(xd,{isPrimary:!0,children:`Save`})]}),p&&(0,J.jsxs)(yx,{onClose:O,children:[(0,J.jsx)(gx,{tag:`h2`,children:`Add partners`}),(0,J.jsx)(px,{"aria-label":`Close modal`}),(0,J.jsxs)(lx,{children:[(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`Select the connected partners that will be allowed to use Incremental APIs for 60 days. Once they are added they will not be removed until the 60 days is complete.`}),E.length===0?(0,J.jsx)(FC,{children:(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`All partners have been added.`})}):n?(0,J.jsx)(PC,{children:(0,J.jsxs)(Oy,{children:[(0,J.jsx)(Ty,{children:`Partners`}),(0,J.jsx)(Cy,{isAutocomplete:!0,isMultiselectable:!0,maxTags:4,renderExpandTags:e=>`+ ${e} more`,listboxAppendToNode:document.body,listboxMaxHeight:`400px`,listboxZIndex:12e3,listboxAriaLabel:`Partners`,placeholder:`Search partners`,inputValue:v,selectionValue:h,onChange:({inputValue:e,selectionValue:t})=>{e!==void 0&&y(e),t!==void 0&&_(Array.isArray(t)?t:[])},children:E.length===0?(0,J.jsx)(Xy,{isDisabled:!0,value:`__no-matches`,label:`No matches found`}):E.map(e=>{let t=v.trim().toLowerCase(),n=!t||e.name.toLowerCase().includes(t),r=h.includes(e.id);return!n&&!r?null:(0,J.jsx)(Xy,{value:e.id,label:e.name,isHidden:!n},e.id)})})]})}):(0,J.jsx)(IC,{children:E.map(e=>(0,J.jsx)(LC,{as:`div`,children:(0,J.jsx)(Bf,{children:(0,J.jsx)(Vf,{checked:h.includes(e.id),onChange:()=>k(e.id),children:(0,J.jsx)(Rf,{children:e.name})})})},e.id))})]}),(0,J.jsxs)(mx,{children:[(0,J.jsx)(hx,{children:(0,J.jsx)(xd,{isBasic:!0,onClick:O,children:`Cancel`})}),(0,J.jsx)(hx,{children:(0,J.jsx)(xd,{isPrimary:!0,onClick:A,children:`Save`})})]})]})]})},BC=V.div`
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1347,7 +1347,7 @@ Error generating stack: `+e.message+`
   position: relative;
   isolation: isolate;
   overflow: hidden;
-`,BC=V.div`
+`,VC=V.div`
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1356,19 +1356,19 @@ Error generating stack: `+e.message+`
   position: relative;
   isolation: isolate;
   overflow: hidden;
-`,VC=V.div`
+`,HC=V.div`
   display: flex;
   flex: 1;
   width: 100%;
   z-index: 1;
   overflow: hidden;
   min-height: 0;
-`,HC=V.div`
+`,UC=V.div`
   display: flex;
   align-self: stretch;
   min-height: 0;
   overflow: hidden;
-`,UC=V.main`
+`,WC=V.main`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -1383,4 +1383,4 @@ Error generating stack: `+e.message+`
   overflow: hidden;
   min-width: 0;
   min-height: 0;
-`;function WC(){let[e,t]=(0,g.useState)(7),[n,r]=(0,g.useState)(!1),[i,a]=(0,g.useState)(`api-configuration`),[o,s]=(0,g.useState)(null),[c,l]=(0,g.useState)(`v1`);return(0,J.jsx)(ur,{children:(0,J.jsxs)(zC,{children:[(0,J.jsx)(Cl,{title:`Incremental API blocking program`,meta:`Started Sept 2026`,versions:sC,versionId:c,onVersionChange:l,versionLabel:`Version`,commentSlotRef:s}),(0,J.jsxs)(BC,{children:[(0,J.jsx)(Mc,{currentProduct:`admin-center`,onProductChange:()=>{}}),(0,J.jsxs)(VC,{children:[(0,J.jsxs)(HC,{children:[(0,J.jsx)(Jc,{currentProduct:`admin-center`,activeNavItem:e,setActiveNavItem:t,isSubnavExpanded:n,setIsSubnavExpanded:r}),(0,J.jsx)(Qu,{currentItem:i,onSelect:a})]}),(0,J.jsx)(UC,{"data-comment-root":`true`,children:(0,J.jsx)(RC,{version:c})})]})]}),(0,J.jsx)(Ru,{toggleContainer:o,context:{version:c},onRestoreContext:e=>{(e.version===`v1`||e.version===`v2`)&&l(e.version)}})]})})}(0,_.createRoot)(document.getElementById(`root`)).render((0,J.jsx)(g.StrictMode,{children:(0,J.jsx)(WC,{})}));
+`;function GC(){let[e,t]=(0,g.useState)(7),[n,r]=(0,g.useState)(!1),[i,a]=(0,g.useState)(`api-configuration`),[o,s]=(0,g.useState)(null),[c,l]=(0,g.useState)(`v1`);return(0,J.jsx)(ur,{children:(0,J.jsxs)(BC,{children:[(0,J.jsx)(Cl,{title:`Incremental API blocking program`,meta:`Started Sept 2026`,versions:sC,versionId:c,onVersionChange:l,versionLabel:`Version`,commentSlotRef:s}),(0,J.jsxs)(VC,{children:[(0,J.jsx)(Mc,{currentProduct:`admin-center`,onProductChange:()=>{}}),(0,J.jsxs)(HC,{children:[(0,J.jsxs)(UC,{children:[(0,J.jsx)(Jc,{currentProduct:`admin-center`,activeNavItem:e,setActiveNavItem:t,isSubnavExpanded:n,setIsSubnavExpanded:r}),(0,J.jsx)(Qu,{currentItem:i,onSelect:a})]}),(0,J.jsx)(WC,{"data-comment-root":`true`,children:(0,J.jsx)(zC,{version:c})})]})]}),(0,J.jsx)(Ru,{toggleContainer:o,context:{version:c},onRestoreContext:e=>{(e.version===`v1`||e.version===`v2`)&&l(e.version)}})]})})}(0,_.createRoot)(document.getElementById(`root`)).render((0,J.jsx)(g.StrictMode,{children:(0,J.jsx)(GC,{})}));
