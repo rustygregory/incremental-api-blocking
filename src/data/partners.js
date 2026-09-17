@@ -58,11 +58,11 @@ export const PHASES = {
   phase3: {
     id: 'phase3',
     informedOn: '2026-10-27',
-    /** Oct 27 + 60 days */
-    windowEnds: '2026-12-26',
+    /** Phase 3 extension window ends */
+    windowEnds: '2027-03-15',
   },
   /** Final day when all phases are done; max extension end. */
-  programEnds: '2027-03-06',
+  programEnds: '2027-03-15',
 }
 
 /**
@@ -111,8 +111,8 @@ function toPartnerRow(partner, { isoDate, phase }) {
  * Ten seeded partners for V2 / V2.1 (only those with an extension).
  * Mixed order — not grouped by phase in the table.
  * - 4 × Phase 1 → window end Nov 21, 2026
- * - 3 × Phase 3 → window end Dec 26, 2026
- * - 3 × after-window → March 6, 2027 (program hard stop)
+ * - 3 × Phase 3 → window end March 15, 2027
+ * - 3 × after-window → March 15, 2027 (program hard stop)
  */
 export function seededPartnersForVersion(versionId) {
   void versionId
