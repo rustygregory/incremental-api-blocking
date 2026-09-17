@@ -265,13 +265,13 @@ const ModalEmptyState = styled.div`
   margin-top: 16px;
   padding: 40px 24px;
   text-align: center;
-  border-top: 1px solid #e9ebed;
-  color: #2f3941;
+  border-top: 1px solid #eae9e8;
+  color: #2f3130;
 `
 
 const PartnerList = styled.div`
   margin-top: 16px;
-  border-top: 1px solid #e9ebed;
+  border-top: 1px solid #eae9e8;
 `
 
 const PartnerOption = styled.label`
@@ -280,8 +280,112 @@ const PartnerOption = styled.label`
   gap: 12px;
   min-height: 44px;
   padding: 10px 0;
-  border-bottom: 1px solid #e9ebed;
+  border-bottom: 1px solid #eae9e8;
   cursor: pointer;
+`
+
+/* Flora outline (pill + neutral) — Garden defaults remain cool/blue. */
+const FloraOutlineButton = styled(Button).attrs({ isPill: true, isNeutral: true })`
+  && {
+    border-radius: 100px;
+    background-color: #ffffff;
+    border-color: #b7b7b3;
+    color: #2f3130;
+
+    &:hover {
+      background-color: #f7f7f7;
+      border-color: #8b8e89;
+      color: #2f3130;
+    }
+
+    &:active {
+      background-color: #eae9e8;
+      border-color: #646864;
+      color: #2f3130;
+    }
+  }
+`
+
+/* Flora modal shell — warmer greys, larger radius, Flora commitment buttons. */
+const FloraModal = styled(Modal)`
+  && {
+    border-radius: 16px;
+    border-color: #dcdcda;
+    background-color: #ffffff;
+    color: #2f3130;
+  }
+
+  [data-garden-id='modals.header'] {
+    border-bottom-color: #eae9e8;
+    color: #2f3130;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  [data-garden-id='modals.body'] {
+    color: #2f3130;
+  }
+
+  [data-garden-id='modals.footer'] {
+    border-top: 1px solid #eae9e8;
+  }
+
+  [data-garden-id='modals.close'] {
+    color: #646864;
+
+    &:hover {
+      background-color: #f7f7f7;
+      color: #2f3130;
+    }
+  }
+`
+
+const FloraModalCancel = styled(Button).attrs({ isBasic: true, isPill: true })`
+  && {
+    color: #2f3130;
+
+    &:hover {
+      background-color: #f7f7f7;
+      color: #2f3130;
+    }
+
+    &:active {
+      background-color: #eae9e8;
+      color: #2f3130;
+    }
+  }
+`
+
+const FloraModalSave = styled(Button).attrs({ isPrimary: true, isPill: true })`
+  && {
+    border-radius: 100px;
+    background-color: #2f3130;
+    border-color: #2f3130;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #404241;
+      border-color: #404241;
+      color: #ffffff;
+    }
+
+    &:active {
+      background-color: #202121;
+      border-color: #202121;
+      color: #ffffff;
+    }
+  }
+`
+
+const FloraFooterItem = styled(FooterItem)`
+  && {
+    margin-left: 12px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
 `
 
 const Footer = styled.footer`
@@ -492,9 +596,9 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                 <PartnersCount tag="div">
                   {partners.length} Partners with an extension
                 </PartnersCount>
-                <Button isPill isNeutral onClick={openModal}>
+                <FloraOutlineButton onClick={openModal}>
                   Add partners
-                </Button>
+                </FloraOutlineButton>
               </PartnersToolbar>
 
               <TableWrap>
@@ -548,7 +652,7 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
       </Footer>
 
       {modalOpen && (
-        <Modal onClose={closeModal}>
+        <FloraModal onClose={closeModal}>
           <ModalHeader tag="h2">Add partners</ModalHeader>
           <Close aria-label="Close modal" />
           <ModalBody>
@@ -629,18 +733,14 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
             )}
           </ModalBody>
           <ModalFooter>
-            <FooterItem>
-              <Button isBasic onClick={closeModal}>
-                Cancel
-              </Button>
-            </FooterItem>
-            <FooterItem>
-              <Button isPrimary onClick={savePartners}>
-                Save
-              </Button>
-            </FooterItem>
+            <FloraFooterItem>
+              <FloraModalCancel onClick={closeModal}>Cancel</FloraModalCancel>
+            </FloraFooterItem>
+            <FloraFooterItem>
+              <FloraModalSave onClick={savePartners}>Save</FloraModalSave>
+            </FloraFooterItem>
           </ModalFooter>
-        </Modal>
+        </FloraModal>
       )}
     </Page>
   )
