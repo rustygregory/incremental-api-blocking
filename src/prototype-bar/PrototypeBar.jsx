@@ -149,8 +149,8 @@ const TriggerLabel = styled.span`
 
 const TriggerDesc = styled.span`
   font-weight: 400;
-  color: #7c8590;
-  font-size: 12px;
+  color: #c8cdd0;
+  font-size: 13px;
 `
 
 /* Filled downward triangle, matches org-hierarchy's CaretIcon. Flips when open. */
@@ -220,8 +220,13 @@ const ItemTitle = styled.span`
 
 const ItemDesc = styled.span`
   font-weight: 400;
-  font-size: 12px;
-  color: #7c8590;
+  font-size: 13px;
+  color: #c8cdd0;
+
+  ${MenuItem}:hover &,
+  ${MenuItem}[aria-selected='true'] & {
+    color: #ffffff;
+  }
 `
 
 const MenuDivider = styled.div`

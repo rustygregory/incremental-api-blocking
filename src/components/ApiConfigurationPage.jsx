@@ -278,11 +278,11 @@ const ComboboxWrap = styled.div`
   }
 
   [data-garden-id='dropdowns.combobox.tags_button'] {
-    color: #406cc4;
+    color: #406cc4 !important;
     font-weight: 600;
 
     &:hover {
-      color: #284173;
+      color: #284173 !important;
       text-decoration: underline;
     }
   }
@@ -744,11 +744,20 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                     renderExpandTags={(hiddenCount) =>
                       `+${hiddenCount} partner${hiddenCount === 1 ? '' : 's'}`
                     }
+                    renderValue={({ selection, inputValue: value }) => {
+                      if (value) return value
+                      const hasTags = Array.isArray(selection)
+                        ? selection.length > 0
+                        : Boolean(selection)
+                      // Collapse “Search partners” whenever tags exist or the user is typing.
+                      if (hasTags) return ''
+                      return 'Search partners'
+                    }}
                     listboxAppendToNode={document.body}
                     listboxMaxHeight="400px"
                     listboxZIndex={12000}
                     listboxAriaLabel="Partners"
-                    placeholder={selectedIds.length > 0 ? '' : 'Search partners'}
+                    placeholder=""
                     inputValue={searchValue}
                     selectionValue={selectedIds}
                     onChange={({ inputValue, selectionValue }) => {
