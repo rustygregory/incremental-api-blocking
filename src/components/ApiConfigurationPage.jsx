@@ -484,7 +484,7 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                 <PartnersCount tag="div">
                   {partners.length} Partners with an extension
                 </PartnersCount>
-                <Button onClick={openModal}>
+                <Button isPill isNeutral onClick={openModal}>
                   Add partners
                 </Button>
               </PartnersToolbar>
@@ -517,7 +517,12 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                           <Table.Row key={partner.id}>
                             <Table.Cell>{partner.name}</Table.Cell>
                             <Table.Cell>
-                              <Tag hue={status === 'Granted' ? 'green' : 'grey'}>{status}</Tag>
+                              <Tag
+                                isPill
+                                hue={status === 'Granted' ? 'successHue' : 'neutralHue'}
+                              >
+                                {status}
+                              </Tag>
                             </Table.Cell>
                             <Table.Cell>{partner.expirationDate}</Table.Cell>
                           </Table.Row>
