@@ -20,7 +20,7 @@ import { Table } from '@zendeskgarden/react-tables'
 import { Tag } from '@zendeskgarden/react-tags'
 import { MD, SM } from '@zendeskgarden/react-typography'
 import PartnersSavedToast from './PartnersSavedToast'
-import { partnersForVersion } from '../data/partners'
+import { partnersForVersion, seededPartnersForVersion, isComboboxVersion } from '../data/partners'
 
 const MONTHS_SHORT = [
   'Jan',
@@ -455,17 +455,22 @@ const Footer = styled.footer`
   z-index: 1;
 `
 
-export const ApiConfigurationPage = ({ version = 'v1' }) => {
+export const ApiConfigurationPage = ({ version = 'v2' }) => {
   const catalog = useMemo(() => partnersForVersion(version), [version])
-  const isV2 = version === 'v2'
+  const isV2 = isComboboxVersion(version)
 
   const [passwordAccess, setPasswordAccess] = useState(true)
   const [endUserPasswordAccess, setEndUserPasswordAccess] = useState(true)
   const [apiTokenAccess, setApiTokenAccess] = useState(true)
 
-  const [stateByVersion, setStateByVersion] = useState({
-    v1: { partners: [], partnerExtensions: false },
-    v2: { partners: [], partnerExtensions: false },
+  const [stateByVersion, setStateByVersion] = useState(() => {
+    const v2Seed = seededPartnersForVersion('v2')
+    const v21Seed = seededPartnersForVersion('v2.1')
+    return {
+      v1: { partners: [], partnerExtensions: false },
+      v2: { partners: v2Seed, partnerExtensions: true },
+      'v2.1': { partners: v21Seed, partnerExtensions: true },
+    }
   })
 
   const { partners, partnerExtensions } = stateByVersion[version] ?? stateByVersion.v1

@@ -111,7 +111,9 @@ function App() {
           toggleContainer={commentSlot}
           context={{ version }}
           onRestoreContext={(saved) => {
-            if (saved.version === 'v1' || saved.version === 'v2') setVersion(saved.version)
+            if (saved.version === 'v1' || saved.version === 'v2' || saved.version === 'v2.1') {
+              setVersion(saved.version)
+            }
           }}
         />
       </OuterShell>
