@@ -249,6 +249,14 @@ const EmptyTitle = styled.div`
   margin-bottom: 4px;
 `
 
+/* Flora subtle status tags (tables) — Garden Tag hues are cool/emphasis, not Flora. */
+const StatusTag = styled(Tag)`
+  && {
+    background-color: ${(p) => (p.$status === 'Granted' ? '#EFF9E6' : '#F7F7F7')};
+    color: ${(p) => (p.$status === 'Granted' ? '#4B7D04' : '#646864')};
+  }
+`
+
 const ComboboxWrap = styled.div`
   margin-top: 16px;
 `
@@ -517,12 +525,9 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                           <Table.Row key={partner.id}>
                             <Table.Cell>{partner.name}</Table.Cell>
                             <Table.Cell>
-                              <Tag
-                                isPill
-                                hue={status === 'Granted' ? 'successHue' : 'neutralHue'}
-                              >
+                              <StatusTag isPill $status={status}>
                                 {status}
-                              </Tag>
+                              </StatusTag>
                             </Table.Cell>
                             <Table.Cell>{partner.expirationDate}</Table.Cell>
                           </Table.Row>
