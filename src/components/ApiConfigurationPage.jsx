@@ -475,11 +475,10 @@ export const ApiConfigurationPage = ({ version = 'v2' }) => {
   const [apiTokenAccess, setApiTokenAccess] = useState(true)
 
   const [stateByVersion, setStateByVersion] = useState(() => {
-    const v2Seed = seededPartnersForVersion('v2')
     const v21Seed = seededPartnersForVersion('v2.1')
     return {
       v1: { partners: [], partnerExtensions: false },
-      v2: { partners: v2Seed, partnerExtensions: true },
+      v2: { partners: [], partnerExtensions: false },
       'v2.1': { partners: v21Seed, partnerExtensions: true },
     }
   })

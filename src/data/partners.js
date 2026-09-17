@@ -108,14 +108,15 @@ function toPartnerRow(partner, { isoDate, phase }) {
 }
 
 /**
- * Ten seeded partners for V2 / V2.1 (only those with an extension).
+ * Ten seeded partners for Version 2.1 only (V2 starts empty).
  * Mixed order — not grouped by phase in the table.
  * - 4 × Phase 1 → window end Nov 21, 2026
  * - 3 × Phase 3 → window end March 15, 2027
  * - 3 × after-window → March 15, 2027 (program hard stop)
  */
 export function seededPartnersForVersion(versionId) {
-  void versionId
+  if (versionId !== 'v2.1') return []
+
   const phase1 = PHASES.phase1.windowEnds
   const phase3 = PHASES.phase3.windowEnds
   const afterWindow = PHASES.programEnds
