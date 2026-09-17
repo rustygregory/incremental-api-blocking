@@ -271,17 +271,40 @@ const ModalEmptyState = styled.div`
 
 const PartnerList = styled.div`
   margin-top: 16px;
-  border-top: 1px solid #eae9e8;
+  border: 1px solid #eae9e8;
+  border-radius: 8px;
+  overflow: hidden;
 `
 
-const PartnerOption = styled.label`
+const PartnerListHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 40px;
+  padding: 8px 12px;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #eae9e8;
+`
+
+const PartnerListHeaderLabel = styled.span`
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #646864;
+  text-transform: none;
+`
+
+const PartnerOption = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
   min-height: 44px;
-  padding: 10px 0;
+  padding: 10px 12px;
   border-bottom: 1px solid #eae9e8;
-  cursor: pointer;
+
+  &:last-child {
+    border-bottom: none;
+  }
 `
 
 /* Flora outline (pill + neutral) — Garden defaults remain cool/blue. */
@@ -454,6 +477,19 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
     setSelectedIds((prev) =>
       prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id],
     )
+  }
+
+  const allAvailableSelected =
+    availableToAdd.length > 0 && availableToAdd.every((p) => selectedIds.includes(p.id))
+  const someAvailableSelected =
+    availableToAdd.some((p) => selectedIds.includes(p.id)) && !allAvailableSelected
+
+  const toggleSelectAll = () => {
+    if (allAvailableSelected) {
+      setSelectedIds([])
+    } else {
+      setSelectedIds(availableToAdd.map((p) => p.id))
+    }
   }
 
   const savePartners = () => {
@@ -717,14 +753,26 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
               </ComboboxWrap>
             ) : (
               <PartnerList>
+                <PartnerListHeader>
+                  <Field>
+                    <Checkbox
+                      checked={allAvailableSelected}
+                      indeterminate={someAvailableSelected}
+                      onChange={toggleSelectAll}
+                    >
+                      <Label hidden>Select all partners</Label>
+                    </Checkbox>
+                  </Field>
+                  <PartnerListHeaderLabel>Partners</PartnerListHeaderLabel>
+                </PartnerListHeader>
                 {availableToAdd.map((partner) => (
-                  <PartnerOption key={partner.id} as="div">
+                  <PartnerOption key={partner.id}>
                     <Field>
                       <Checkbox
                         checked={selectedIds.includes(partner.id)}
                         onChange={() => toggleSelected(partner.id)}
                       >
-                        <Label>{partner.name}</Label>
+                        <Label isRegular>{partner.name}</Label>
                       </Checkbox>
                     </Field>
                   </PartnerOption>
