@@ -1183,19 +1183,19 @@ Error generating stack: `+e.message+`
   right: ${40}px;
   z-index: 11000;
   max-width: 360px;
-`;function iC({count:e=1,onClose:t}){return(0,g.useEffect)(()=>{let e=window.setTimeout(t,nC);return()=>window.clearTimeout(e)},[t]),(0,wl.createPortal)((0,J.jsx)(rC,{role:`status`,"aria-live":`polite`,children:(0,J.jsxs)(tC,{type:`success`,children:[(0,J.jsx)(ZS,{children:e===1?`Partner successfully added for 60 days`:`Partners successfully added for 60 days`}),(0,J.jsx)($S,{"aria-label":`Close`,onClick:t})]})}),document.body)}var aC=[{id:`acme-support`,name:`Acme Support`},{id:`northstar-labs`,name:`Northstar Labs`},{id:`bluebird-health`,name:`Bluebird Health`},{id:`contoso-services`,name:`Contoso Services`}],oC=[{id:`acme-support`,name:`Acme Support`},{id:`northstar-labs`,name:`Northstar Labs`},{id:`bluebird-health`,name:`Bluebird Health`},{id:`contoso-services`,name:`Contoso Services`},{id:`apex-digital`,name:`Apex Digital`},{id:`brightline-systems`,name:`Brightline Systems`},{id:`cascade-analytics`,name:`Cascade Analytics`},{id:`cobalt-communications`,name:`Cobalt Communications`},{id:`deltaforge`,name:`Deltaforge`},{id:`evergreen-ops`,name:`Evergreen Ops`},{id:`frontier-metrics`,name:`Frontier Metrics`},{id:`harbor-cloud`,name:`Harbor Cloud`},{id:`ironclad-software`,name:`Ironclad Software`},{id:`juniper-data`,name:`Juniper Data`},{id:`keystone-platforms`,name:`Keystone Platforms`},{id:`lumen-bridge`,name:`Lumen Bridge`},{id:`meridian-tech`,name:`Meridian Tech`},{id:`nimbus-works`,name:`Nimbus Works`},{id:`orbit-solutions`,name:`Orbit Solutions`},{id:`pinnacle-partner`,name:`Pinnacle Partner`},{id:`quantum-relay`,name:`Quantum Relay`},{id:`redwood-integrations`,name:`Redwood Integrations`},{id:`summit-channel`,name:`Summit Channel`},{id:`truenorth-apps`,name:`TrueNorth Apps`},{id:`vertex-alliance`,name:`Vertex Alliance`}],sC=[{id:`v1`,label:`Version 1`,description:`Checkbox modal`},{id:`v2`,label:`Version 2`,description:`Searchable multiselect`}];function cC(e){return e===`v2`?oC:aC}var lC=[`Jan`,`Feb`,`Mar`,`Apr`,`May`,`June`,`July`,`Aug`,`Sept`,`Oct`,`Nov`,`Dec`];function uC(e){return`${lC[e.getMonth()]} ${e.getDate()}, ${e.getFullYear()}`}function dC(e=new Date){let t=new Date(e);return t.setDate(t.getDate()+60),t.setHours(0,0,0,0),t}function fC(e){let t=new Date(e);return t.setHours(23,59,59,999),new Date>t?`Expired`:`Granted`}var pC=V.div`
+`;function iC({count:e=1,onClose:t}){return(0,g.useEffect)(()=>{let e=window.setTimeout(t,nC);return()=>window.clearTimeout(e)},[t]),(0,wl.createPortal)((0,J.jsx)(rC,{role:`status`,"aria-live":`polite`,children:(0,J.jsxs)(tC,{type:`success`,children:[(0,J.jsx)(ZS,{children:e===1?`Partner successfully added for 60 days`:`Partners successfully added for 60 days`}),(0,J.jsx)($S,{"aria-label":`Close`,onClick:t})]})}),document.body)}var aC=[{id:`acme-support`,name:`Acme Support`},{id:`northstar-labs`,name:`Northstar Labs`},{id:`bluebird-health`,name:`Bluebird Health`},{id:`contoso-services`,name:`Contoso Services`}],oC=[{id:`acme-support`,name:`Acme Support`},{id:`northstar-labs`,name:`Northstar Labs`},{id:`bluebird-health`,name:`Bluebird Health`},{id:`contoso-services`,name:`Contoso Services`},{id:`apex-digital`,name:`Apex Digital`},{id:`brightline-systems`,name:`Brightline Systems`},{id:`cascade-analytics`,name:`Cascade Analytics`},{id:`cobalt-communications`,name:`Cobalt Communications`},{id:`deltaforge`,name:`Deltaforge`},{id:`evergreen-ops`,name:`Evergreen Ops`},{id:`frontier-metrics`,name:`Frontier Metrics`},{id:`harbor-cloud`,name:`Harbor Cloud`},{id:`ironclad-software`,name:`Ironclad Software`},{id:`juniper-data`,name:`Juniper Data`},{id:`keystone-platforms`,name:`Keystone Platforms`},{id:`lumen-bridge`,name:`Lumen Bridge`},{id:`meridian-tech`,name:`Meridian Tech`},{id:`nimbus-works`,name:`Nimbus Works`},{id:`orbit-solutions`,name:`Orbit Solutions`},{id:`pinnacle-partner`,name:`Pinnacle Partner`},{id:`quantum-relay`,name:`Quantum Relay`},{id:`redwood-integrations`,name:`Redwood Integrations`},{id:`summit-channel`,name:`Summit Channel`},{id:`truenorth-apps`,name:`TrueNorth Apps`},{id:`vertex-alliance`,name:`Vertex Alliance`}],sC=[{id:`v1`,label:`Version 1`,description:`Checkbox modal`},{id:`v2`,label:`Version 2`,description:`Searchable multiselect`},{id:`v2.1`,label:`Version 2.1`,description:`Expiration`}],cC=[`Jan`,`Feb`,`Mar`,`Apr`,`May`,`June`,`July`,`Aug`,`Sept`,`Oct`,`Nov`,`Dec`];function lC(e){return`${cC[e.getMonth()]} ${e.getDate()}, ${e.getFullYear()}`}function uC(e){let[t,n,r]=e.split(`-`).map(Number);return new Date(t,n-1,r,12,0,0,0)}function dC(e,t){let n=uC(t);return{id:e.id,name:e.name,expiresAt:n.toISOString(),expirationDate:lC(n)}}function fC(e){let t=e===`v2.1`?`2026-07-19`:`2026-11-16`;return oC.slice(0,10).map((e,n)=>dC(e,n>=3&&n<=5?`2027-01-15`:t))}function pC(e){return e===`v2`||e===`v2.1`?oC:aC}function mC(e){return e===`v2`||e===`v2.1`}var hC=[`Jan`,`Feb`,`Mar`,`Apr`,`May`,`June`,`July`,`Aug`,`Sept`,`Oct`,`Nov`,`Dec`];function gC(e){return`${hC[e.getMonth()]} ${e.getDate()}, ${e.getFullYear()}`}function _C(e=new Date){let t=new Date(e);return t.setDate(t.getDate()+60),t.setHours(0,0,0,0),t}function vC(e){let t=new Date(e);return t.setHours(23,59,59,999),new Date>t?`Expired`:`Granted`}var yC=V.div`
   display: flex;
   flex-direction: column;
   flex: 1;
   min-height: 0;
   background: #ffffff;
   position: relative;
-`,mC=V.div`
+`,bC=V.div`
   flex: 1;
   min-height: 0;
   overflow: auto;
   padding: 24px 40px 32px 32px;
-`,hC=V.nav`
+`,xC=V.nav`
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 13px;
   color: #68737d;
@@ -1217,9 +1217,9 @@ Error generating stack: `+e.message+`
       text-decoration: underline;
     }
   }
-`,gC=V.span`
+`,SC=V.span`
   color: #c2c8cc;
-`,_C=V.h1`
+`,CC=V.h1`
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 28px;
   font-weight: 600;
@@ -1227,32 +1227,32 @@ Error generating stack: `+e.message+`
   letter-spacing: -0.36px;
   color: #2f3941;
   margin: 0 0 8px;
-`,vC=V.p`
+`,wC=V.p`
   font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #2f3941;
   margin: 0 0 4px;
-`,yC=V.a`
+`,TC=V.a`
   color: #1f73b7;
   text-decoration: underline;
 
   &:hover {
     color: #144a75;
   }
-`,bC=()=>(0,J.jsxs)(`svg`,{width:`10`,height:`10`,viewBox:`0 0 12 12`,fill:`none`,xmlns:`http://www.w3.org/2000/svg`,"aria-hidden":`true`,style:{marginLeft:2,verticalAlign:`baseline`},children:[(0,J.jsx)(`path`,{d:`M3 3h6v6`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`}),(0,J.jsx)(`path`,{d:`M9 3 3 9`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`})]}),xC=V.div`
+`,EC=()=>(0,J.jsxs)(`svg`,{width:`10`,height:`10`,viewBox:`0 0 12 12`,fill:`none`,xmlns:`http://www.w3.org/2000/svg`,"aria-hidden":`true`,style:{marginLeft:2,verticalAlign:`baseline`},children:[(0,J.jsx)(`path`,{d:`M3 3h6v6`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`}),(0,J.jsx)(`path`,{d:`M9 3 3 9`,stroke:`currentColor`,strokeWidth:`1.5`,strokeLinecap:`round`,strokeLinejoin:`round`})]}),DC=V.div`
   margin: 24px 0 28px;
   padding: 16px 20px;
   background: #f8f9f9;
   border-radius: 4px;
   border: 1px solid #e9ebed;
-`,SC=V.div`
+`,OC=V.div`
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
   color: #2f3941;
   margin-bottom: 8px;
-`,CC=V.div`
+`,kC=V.div`
   font-size: 14px;
   line-height: 20px;
   color: #2f3941;
@@ -1269,53 +1269,53 @@ Error generating stack: `+e.message+`
   li {
     margin-bottom: 2px;
   }
-`,wC=V.div`
+`,AC=V.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
   max-width: 720px;
-`,TC=V(Bf)`
+`,jC=V(Bf)`
   margin: 0;
-`,EC=V.div`
+`,MC=V.div`
   margin-top: 24px;
-`,DC=V.div`
+`,NC=V.div`
   max-width: 720px;
-`,OC=V.div`
+`,PC=V.div`
   margin-top: 16px;
   /* Align with Garden checkbox label text; stretch to the scroll area’s right edge (40px pad). */
   margin-left: 28px;
-`,kC=V.div`
+`,FC=V.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 8px;
-`,AC=V(_o)`
+`,IC=V(_o)`
   margin: 0;
   padding: 0;
   font-weight: 400;
   line-height: 20px;
   color: #2f3941;
-`,jC=V.div`
+`,LC=V.div`
   /* Partners table is display-only — suppress Garden row hover. */
   [data-garden-id='tables.row']:hover {
     background-color: transparent !important;
   }
-`,MC=V.div`
+`,RC=V.div`
   padding: 40px 24px;
   text-align: center;
   color: #68737d;
-`,NC=V.div`
+`,zC=V.div`
   font-size: 14px;
   font-weight: 600;
   color: #2f3941;
   margin-bottom: 4px;
-`,PC=V(Xg)`
+`,BC=V(Xg)`
   && {
     background-color: ${e=>e.$status===`Granted`?`#EFF9E6`:`#F7F7F7`};
     color: ${e=>e.$status===`Granted`?`#4B7D04`:`#646864`};
   }
-`,FC=V.div`
+`,VC=V.div`
   margin-top: 16px;
 
   /* Flora combobox + multiselect tags (forms use square subtle tags). */
@@ -1348,18 +1348,18 @@ Error generating stack: `+e.message+`
   [data-garden-id='dropdowns.combobox.label'] {
     color: #2f3130;
   }
-`,IC=V.div`
+`,HC=V.div`
   margin-top: 16px;
   padding: 40px 24px;
   text-align: center;
   border-top: 1px solid #eae9e8;
   color: #2f3130;
-`,LC=V.div`
+`,UC=V.div`
   margin-top: 16px;
   border: 1px solid #eae9e8;
   border-radius: 8px;
   overflow: hidden;
-`,RC=V.div`
+`,WC=V.div`
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1367,13 +1367,13 @@ Error generating stack: `+e.message+`
   padding: 8px 12px;
   background-color: #f7f7f7;
   border-bottom: 1px solid #eae9e8;
-`,zC=V.span`
+`,GC=V.span`
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
   color: #646864;
   text-transform: none;
-`,BC=V.div`
+`,KC=V.div`
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1384,7 +1384,7 @@ Error generating stack: `+e.message+`
   &:last-child {
     border-bottom: none;
   }
-`,VC=V(xd).attrs({isPill:!0,isNeutral:!0})`
+`,qC=V(xd).attrs({isPill:!0,isNeutral:!0})`
   && {
     border-radius: 100px;
     background-color: #ffffff;
@@ -1403,7 +1403,7 @@ Error generating stack: `+e.message+`
       color: #2f3130;
     }
   }
-`,HC=V(yx)`
+`,JC=V(yx)`
   && {
     border-radius: 16px;
     border-color: #dcdcda;
@@ -1435,7 +1435,7 @@ Error generating stack: `+e.message+`
       color: #2f3130;
     }
   }
-`,UC=V(xd).attrs({isBasic:!0,isPill:!0})`
+`,YC=V(xd).attrs({isBasic:!0,isPill:!0})`
   && {
     color: #2f3130;
 
@@ -1449,7 +1449,7 @@ Error generating stack: `+e.message+`
       color: #2f3130;
     }
   }
-`,WC=V(xd).attrs({isPrimary:!0,isPill:!0})`
+`,XC=V(xd).attrs({isPrimary:!0,isPill:!0})`
   && {
     border-radius: 100px;
     background-color: #2f3130;
@@ -1468,7 +1468,7 @@ Error generating stack: `+e.message+`
       color: #ffffff;
     }
   }
-`,GC=V(hx)`
+`,ZC=V(hx)`
   && {
     margin-left: 12px;
 
@@ -1476,7 +1476,7 @@ Error generating stack: `+e.message+`
       margin-left: 0;
     }
   }
-`,KC=V.footer`
+`,QC=V.footer`
   flex-shrink: 0;
   display: flex;
   justify-content: flex-end;
@@ -1487,7 +1487,7 @@ Error generating stack: `+e.message+`
   background: #ffffff;
   position: relative;
   z-index: 1;
-`,qC=({version:e=`v1`})=>{let t=(0,g.useMemo)(()=>cC(e),[e]),n=e===`v2`,[r,i]=(0,g.useState)(!0),[a,o]=(0,g.useState)(!0),[s,c]=(0,g.useState)(!0),[l,u]=(0,g.useState)({v1:{partners:[],partnerExtensions:!1},v2:{partners:[],partnerExtensions:!1}}),{partners:d,partnerExtensions:f}=l[e]??l.v1,[p,m]=(0,g.useState)(!1),[h,_]=(0,g.useState)([]),[v,y]=(0,g.useState)(``),[b,x]=(0,g.useState)(!1),[S,C]=(0,g.useState)(0),w=(0,g.useCallback)((e,t)=>{u(n=>({...n,[e]:{...n[e],...t}}))},[]),T=(0,g.useMemo)(()=>new Set(d.map(e=>e.id)),[d]),E=(0,g.useMemo)(()=>t.filter(e=>!T.has(e.id)),[t,T]),D=()=>{_([]),y(``),m(!0)},O=()=>{m(!1),_([]),y(``)},k=e=>{_(t=>t.includes(e)?t.filter(t=>t!==e):[...t,e])},A=E.length>0&&E.every(e=>h.includes(e.id)),j=E.some(e=>h.includes(e.id))&&!A,M=()=>{_(A?[]:E.map(e=>e.id))},N=()=>{if(h.length===0){O();return}let n=dC(),r=t.filter(e=>h.includes(e.id)&&!T.has(e.id)).map(e=>({id:e.id,name:e.name,expiresAt:n.toISOString(),expirationDate:uC(n)}));if(r.length===0){O();return}w(e,{partners:[...d,...r],partnerExtensions:!0}),O(),C(r.length),x(!0)},P=t=>{w(e,{partnerExtensions:t})};return(0,J.jsxs)(pC,{children:[b&&(0,J.jsx)(iC,{count:S,onClose:()=>x(!1)}),(0,J.jsxs)(mC,{children:[(0,J.jsxs)(hC,{"aria-label":`Breadcrumb`,children:[(0,J.jsx)(`a`,{href:`#`,children:`Apps and integrations`}),(0,J.jsx)(gC,{children:`›`}),(0,J.jsx)(`a`,{href:`#`,children:`APIs`}),(0,J.jsx)(gC,{children:`›`}),(0,J.jsx)(`span`,{children:`API configuration`})]}),(0,J.jsx)(_C,{children:`API configuration`}),(0,J.jsxs)(vC,{children:[`Manage how users can access the Zendesk API.`,` `,(0,J.jsxs)(yC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Learn about managing access`,(0,J.jsx)(bC,{})]})]}),(0,J.jsxs)(vC,{children:[`View the`,` `,(0,J.jsxs)(yC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Zendesk Developer Terms`,(0,J.jsx)(bC,{})]}),`.`]}),(0,J.jsxs)(xC,{children:[(0,J.jsx)(SC,{children:`Zendesk is removing API tokens`}),(0,J.jsxs)(CC,{children:[(0,J.jsx)(`p`,{children:`Active API tokens will stop working on April 30, 2027. To avoid service interruptions:`}),(0,J.jsxs)(`ul`,{children:[(0,J.jsx)(`li`,{children:`Find workflows that use API tokens`}),(0,J.jsx)(`li`,{children:`Migrate those workflows to OAuth`})]}),(0,J.jsx)(yC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:`Learn about transitioning from API tokens`})]})]}),(0,J.jsxs)(wC,{children:[(0,J.jsx)(TC,{children:(0,J.jsxs)(Vf,{checked:r,onChange:()=>i(e=>!e),children:[(0,J.jsx)(Rf,{children:`Password access`}),(0,J.jsx)(xf,{children:`Activate API authentication using an agent's email address and password. Password access is deprecated, this option won't be available again if you disable it now`})]})}),(0,J.jsx)(TC,{children:(0,J.jsxs)(Vf,{checked:a,onChange:()=>o(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow password access for end users`}),(0,J.jsx)(xf,{children:`Allow end users to authenticate API requests with their email and password. When off, end user access is considered anonymous.`})]})}),(0,J.jsx)(TC,{children:(0,J.jsxs)(Vf,{checked:s,onChange:()=>c(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow API token access`}),(0,J.jsx)(xf,{children:`Team members will authenticate API requests using their email address and a token.`})]})})]}),(0,J.jsxs)(EC,{children:[(0,J.jsx)(DC,{children:(0,J.jsx)(TC,{children:(0,J.jsxs)(Vf,{checked:f||d.length>0,disabled:d.length>0,onChange:()=>P(!f),children:[(0,J.jsx)(Rf,{children:`Incremental API partner extensions`}),(0,J.jsx)(xf,{children:`Extend partners' time to migrate their apps from Incremental to Transactional APIs for 60 days.`})]})})}),(f||d.length>0)&&(0,J.jsxs)(OC,{children:[(0,J.jsxs)(kC,{children:[(0,J.jsxs)(AC,{tag:`div`,children:[d.length,` Partners with an extension`]}),(0,J.jsx)(VC,{onClick:D,children:`Add partners`})]}),(0,J.jsx)(jC,{children:(0,J.jsxs)(SS,{isReadOnly:!0,children:[(0,J.jsx)(SS.Head,{children:(0,J.jsxs)(SS.HeaderRow,{children:[(0,J.jsx)(SS.HeaderCell,{children:`Partner`}),(0,J.jsx)(SS.HeaderCell,{children:`Extension status`}),(0,J.jsx)(SS.HeaderCell,{children:`Extension expires`})]})}),(0,J.jsx)(SS.Body,{children:d.length===0?(0,J.jsx)(SS.Row,{children:(0,J.jsx)(SS.Cell,{colSpan:3,children:(0,J.jsxs)(MC,{children:[(0,J.jsx)(NC,{children:`No partners with an extension`}),(0,J.jsx)(go,{tag:`div`,children:`Add partners to extend Incremental API access for 60 days.`})]})})}):d.map(e=>{let t=fC(e.expiresAt);return(0,J.jsxs)(SS.Row,{children:[(0,J.jsx)(SS.Cell,{children:e.name}),(0,J.jsx)(SS.Cell,{children:(0,J.jsx)(PC,{isPill:!0,$status:t,children:t})}),(0,J.jsx)(SS.Cell,{children:e.expirationDate})]},e.id)})})]})})]})]})]}),(0,J.jsxs)(KC,{children:[(0,J.jsx)(xd,{isBasic:!0,children:`Cancel`}),(0,J.jsx)(xd,{isPrimary:!0,children:`Save`})]}),p&&(0,J.jsxs)(HC,{onClose:O,children:[(0,J.jsx)(gx,{tag:`h2`,children:`Add partners`}),(0,J.jsx)(px,{"aria-label":`Close modal`}),(0,J.jsxs)(lx,{children:[(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`Select the connected partners that will be allowed to use Incremental APIs for 60 days. Once they are added they will not be removed until the 60 days is complete.`}),E.length===0?(0,J.jsx)(IC,{children:(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`All partners have been added.`})}):n?(0,J.jsx)(FC,{children:(0,J.jsxs)(Oy,{children:[(0,J.jsx)(Ty,{children:`Partners`}),(0,J.jsx)(Cy,{isAutocomplete:!0,isMultiselectable:!0,maxTags:1,renderExpandTags:e=>`+${e} partner${e===1?``:`s`}`,renderValue:({selection:e,inputValue:t})=>t||((Array.isArray(e)?e.length>0:e)?``:`Search partners`),listboxAppendToNode:document.body,listboxMaxHeight:`400px`,listboxZIndex:12e3,listboxAriaLabel:`Partners`,placeholder:``,inputValue:v,selectionValue:h,onChange:({inputValue:e,selectionValue:t})=>{e!==void 0&&y(e),t!==void 0&&_(Array.isArray(t)?t:[])},children:E.length===0?(0,J.jsx)(Xy,{isDisabled:!0,value:`__no-matches`,label:`No matches found`}):E.map(e=>{let t=v.trim().toLowerCase(),n=!t||e.name.toLowerCase().includes(t),r=h.includes(e.id);return!n&&!r?null:(0,J.jsx)(Xy,{value:e.id,label:e.name,isHidden:!n,tagProps:{isPill:!1}},e.id)})})]})}):(0,J.jsxs)(LC,{children:[(0,J.jsxs)(RC,{children:[(0,J.jsx)(Bf,{children:(0,J.jsx)(Vf,{checked:A,indeterminate:j,onChange:M,children:(0,J.jsx)(Rf,{hidden:!0,children:`Select all partners`})})}),(0,J.jsx)(zC,{children:`Partners`})]}),E.map(e=>(0,J.jsx)(BC,{children:(0,J.jsx)(Bf,{children:(0,J.jsx)(Vf,{checked:h.includes(e.id),onChange:()=>k(e.id),children:(0,J.jsx)(Rf,{isRegular:!0,children:e.name})})})},e.id))]})]}),(0,J.jsxs)(mx,{children:[(0,J.jsx)(GC,{children:(0,J.jsx)(UC,{onClick:O,children:`Cancel`})}),(0,J.jsx)(GC,{children:(0,J.jsx)(WC,{onClick:N,children:`Save`})})]})]})]})},JC=V.div`
+`,$C=({version:e=`v2`})=>{let t=(0,g.useMemo)(()=>pC(e),[e]),n=mC(e),[r,i]=(0,g.useState)(!0),[a,o]=(0,g.useState)(!0),[s,c]=(0,g.useState)(!0),[l,u]=(0,g.useState)(()=>{let e=fC(`v2`),t=fC(`v2.1`);return{v1:{partners:[],partnerExtensions:!1},v2:{partners:e,partnerExtensions:!0},"v2.1":{partners:t,partnerExtensions:!0}}}),{partners:d,partnerExtensions:f}=l[e]??l.v1,[p,m]=(0,g.useState)(!1),[h,_]=(0,g.useState)([]),[v,y]=(0,g.useState)(``),[b,x]=(0,g.useState)(!1),[S,C]=(0,g.useState)(0),w=(0,g.useCallback)((e,t)=>{u(n=>({...n,[e]:{...n[e],...t}}))},[]),T=(0,g.useMemo)(()=>new Set(d.map(e=>e.id)),[d]),E=(0,g.useMemo)(()=>t.filter(e=>!T.has(e.id)),[t,T]),D=()=>{_([]),y(``),m(!0)},O=()=>{m(!1),_([]),y(``)},k=e=>{_(t=>t.includes(e)?t.filter(t=>t!==e):[...t,e])},A=E.length>0&&E.every(e=>h.includes(e.id)),j=E.some(e=>h.includes(e.id))&&!A,M=()=>{_(A?[]:E.map(e=>e.id))},N=()=>{if(h.length===0){O();return}let n=_C(),r=t.filter(e=>h.includes(e.id)&&!T.has(e.id)).map(e=>({id:e.id,name:e.name,expiresAt:n.toISOString(),expirationDate:gC(n)}));if(r.length===0){O();return}w(e,{partners:[...d,...r],partnerExtensions:!0}),O(),C(r.length),x(!0)},P=t=>{w(e,{partnerExtensions:t})};return(0,J.jsxs)(yC,{children:[b&&(0,J.jsx)(iC,{count:S,onClose:()=>x(!1)}),(0,J.jsxs)(bC,{children:[(0,J.jsxs)(xC,{"aria-label":`Breadcrumb`,children:[(0,J.jsx)(`a`,{href:`#`,children:`Apps and integrations`}),(0,J.jsx)(SC,{children:`›`}),(0,J.jsx)(`a`,{href:`#`,children:`APIs`}),(0,J.jsx)(SC,{children:`›`}),(0,J.jsx)(`span`,{children:`API configuration`})]}),(0,J.jsx)(CC,{children:`API configuration`}),(0,J.jsxs)(wC,{children:[`Manage how users can access the Zendesk API.`,` `,(0,J.jsxs)(TC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Learn about managing access`,(0,J.jsx)(EC,{})]})]}),(0,J.jsxs)(wC,{children:[`View the`,` `,(0,J.jsxs)(TC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:[`Zendesk Developer Terms`,(0,J.jsx)(EC,{})]}),`.`]}),(0,J.jsxs)(DC,{children:[(0,J.jsx)(OC,{children:`Zendesk is removing API tokens`}),(0,J.jsxs)(kC,{children:[(0,J.jsx)(`p`,{children:`Active API tokens will stop working on April 30, 2027. To avoid service interruptions:`}),(0,J.jsxs)(`ul`,{children:[(0,J.jsx)(`li`,{children:`Find workflows that use API tokens`}),(0,J.jsx)(`li`,{children:`Migrate those workflows to OAuth`})]}),(0,J.jsx)(TC,{href:`#`,target:`_blank`,rel:`noopener noreferrer`,children:`Learn about transitioning from API tokens`})]})]}),(0,J.jsxs)(AC,{children:[(0,J.jsx)(jC,{children:(0,J.jsxs)(Vf,{checked:r,onChange:()=>i(e=>!e),children:[(0,J.jsx)(Rf,{children:`Password access`}),(0,J.jsx)(xf,{children:`Activate API authentication using an agent's email address and password. Password access is deprecated, this option won't be available again if you disable it now`})]})}),(0,J.jsx)(jC,{children:(0,J.jsxs)(Vf,{checked:a,onChange:()=>o(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow password access for end users`}),(0,J.jsx)(xf,{children:`Allow end users to authenticate API requests with their email and password. When off, end user access is considered anonymous.`})]})}),(0,J.jsx)(jC,{children:(0,J.jsxs)(Vf,{checked:s,onChange:()=>c(e=>!e),children:[(0,J.jsx)(Rf,{children:`Allow API token access`}),(0,J.jsx)(xf,{children:`Team members will authenticate API requests using their email address and a token.`})]})})]}),(0,J.jsxs)(MC,{children:[(0,J.jsx)(NC,{children:(0,J.jsx)(jC,{children:(0,J.jsxs)(Vf,{checked:f||d.length>0,disabled:d.length>0,onChange:()=>P(!f),children:[(0,J.jsx)(Rf,{children:`Incremental API partner extensions`}),(0,J.jsx)(xf,{children:`Extend partners' time to migrate their apps from Incremental to Transactional APIs for 60 days.`})]})})}),(f||d.length>0)&&(0,J.jsxs)(PC,{children:[(0,J.jsxs)(FC,{children:[(0,J.jsxs)(IC,{tag:`div`,children:[d.length,` Partners with an extension`]}),(0,J.jsx)(qC,{onClick:D,children:`Add partners`})]}),(0,J.jsx)(LC,{children:(0,J.jsxs)(SS,{isReadOnly:!0,children:[(0,J.jsx)(SS.Head,{children:(0,J.jsxs)(SS.HeaderRow,{children:[(0,J.jsx)(SS.HeaderCell,{children:`Partner`}),(0,J.jsx)(SS.HeaderCell,{children:`Extension status`}),(0,J.jsx)(SS.HeaderCell,{children:`Extension expires`})]})}),(0,J.jsx)(SS.Body,{children:d.length===0?(0,J.jsx)(SS.Row,{children:(0,J.jsx)(SS.Cell,{colSpan:3,children:(0,J.jsxs)(RC,{children:[(0,J.jsx)(zC,{children:`No partners with an extension`}),(0,J.jsx)(go,{tag:`div`,children:`Add partners to extend Incremental API access for 60 days.`})]})})}):d.map(e=>{let t=vC(e.expiresAt);return(0,J.jsxs)(SS.Row,{children:[(0,J.jsx)(SS.Cell,{children:e.name}),(0,J.jsx)(SS.Cell,{children:(0,J.jsx)(BC,{isPill:!0,$status:t,children:t})}),(0,J.jsx)(SS.Cell,{children:e.expirationDate})]},e.id)})})]})})]})]})]}),(0,J.jsxs)(QC,{children:[(0,J.jsx)(xd,{isBasic:!0,children:`Cancel`}),(0,J.jsx)(xd,{isPrimary:!0,children:`Save`})]}),p&&(0,J.jsxs)(JC,{onClose:O,children:[(0,J.jsx)(gx,{tag:`h2`,children:`Add partners`}),(0,J.jsx)(px,{"aria-label":`Close modal`}),(0,J.jsxs)(lx,{children:[(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`Select the connected partners that will be allowed to use Incremental APIs for 60 days. Once they are added they will not be removed until the 60 days is complete.`}),E.length===0?(0,J.jsx)(HC,{children:(0,J.jsx)(_o,{tag:`p`,style:{margin:0},children:`All partners have been added.`})}):n?(0,J.jsx)(VC,{children:(0,J.jsxs)(Oy,{children:[(0,J.jsx)(Ty,{children:`Partners`}),(0,J.jsx)(Cy,{isAutocomplete:!0,isMultiselectable:!0,maxTags:1,renderExpandTags:e=>`+${e} partner${e===1?``:`s`}`,renderValue:({selection:e,inputValue:t})=>t||((Array.isArray(e)?e.length>0:e)?``:`Search partners`),listboxAppendToNode:document.body,listboxMaxHeight:`400px`,listboxZIndex:12e3,listboxAriaLabel:`Partners`,placeholder:``,inputValue:v,selectionValue:h,onChange:({inputValue:e,selectionValue:t})=>{e!==void 0&&y(e),t!==void 0&&_(Array.isArray(t)?t:[])},children:E.length===0?(0,J.jsx)(Xy,{isDisabled:!0,value:`__no-matches`,label:`No matches found`}):E.map(e=>{let t=v.trim().toLowerCase(),n=!t||e.name.toLowerCase().includes(t),r=h.includes(e.id);return!n&&!r?null:(0,J.jsx)(Xy,{value:e.id,label:e.name,isHidden:!n,tagProps:{isPill:!1}},e.id)})})]})}):(0,J.jsxs)(UC,{children:[(0,J.jsxs)(WC,{children:[(0,J.jsx)(Bf,{children:(0,J.jsx)(Vf,{checked:A,indeterminate:j,onChange:M,children:(0,J.jsx)(Rf,{hidden:!0,children:`Select all partners`})})}),(0,J.jsx)(GC,{children:`Partners`})]}),E.map(e=>(0,J.jsx)(KC,{children:(0,J.jsx)(Bf,{children:(0,J.jsx)(Vf,{checked:h.includes(e.id),onChange:()=>k(e.id),children:(0,J.jsx)(Rf,{isRegular:!0,children:e.name})})})},e.id))]})]}),(0,J.jsxs)(mx,{children:[(0,J.jsx)(ZC,{children:(0,J.jsx)(YC,{onClick:O,children:`Cancel`})}),(0,J.jsx)(ZC,{children:(0,J.jsx)(XC,{onClick:N,children:`Save`})})]})]})]})},ew=V.div`
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1499,7 +1499,7 @@ Error generating stack: `+e.message+`
   position: relative;
   isolation: isolate;
   overflow: hidden;
-`,YC=V.div`
+`,tw=V.div`
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -1508,19 +1508,19 @@ Error generating stack: `+e.message+`
   position: relative;
   isolation: isolate;
   overflow: hidden;
-`,XC=V.div`
+`,nw=V.div`
   display: flex;
   flex: 1;
   width: 100%;
   z-index: 1;
   overflow: hidden;
   min-height: 0;
-`,ZC=V.div`
+`,rw=V.div`
   display: flex;
   align-self: stretch;
   min-height: 0;
   overflow: hidden;
-`,QC=V.main`
+`,iw=V.main`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -1535,4 +1535,4 @@ Error generating stack: `+e.message+`
   overflow: hidden;
   min-width: 0;
   min-height: 0;
-`;function $C(){let[e,t]=(0,g.useState)(7),[n,r]=(0,g.useState)(!1),[i,a]=(0,g.useState)(`api-configuration`),[o,s]=(0,g.useState)(null),[c,l]=(0,g.useState)(`v2`);return(0,J.jsx)(ur,{children:(0,J.jsxs)(JC,{children:[(0,J.jsx)(Cl,{title:`Incremental API blocking program`,meta:`Started Sept 2026`,versions:sC,versionId:c,onVersionChange:l,versionLabel:`Version`,commentSlotRef:s}),(0,J.jsxs)(YC,{children:[(0,J.jsx)(Mc,{currentProduct:`admin-center`,onProductChange:()=>{}}),(0,J.jsxs)(XC,{children:[(0,J.jsxs)(ZC,{children:[(0,J.jsx)(Jc,{currentProduct:`admin-center`,activeNavItem:e,setActiveNavItem:t,isSubnavExpanded:n,setIsSubnavExpanded:r}),(0,J.jsx)(Qu,{currentItem:i,onSelect:a})]}),(0,J.jsx)(QC,{"data-comment-root":`true`,children:(0,J.jsx)(qC,{version:c})})]})]}),(0,J.jsx)(Ru,{toggleContainer:o,context:{version:c},onRestoreContext:e=>{(e.version===`v1`||e.version===`v2`)&&l(e.version)}})]})})}(0,_.createRoot)(document.getElementById(`root`)).render((0,J.jsx)(g.StrictMode,{children:(0,J.jsx)($C,{})}));
+`;function aw(){let[e,t]=(0,g.useState)(7),[n,r]=(0,g.useState)(!1),[i,a]=(0,g.useState)(`api-configuration`),[o,s]=(0,g.useState)(null),[c,l]=(0,g.useState)(`v2`);return(0,J.jsx)(ur,{children:(0,J.jsxs)(ew,{children:[(0,J.jsx)(Cl,{title:`Incremental API blocking program`,meta:`Started Sept 2026`,versions:sC,versionId:c,onVersionChange:l,versionLabel:`Version`,commentSlotRef:s}),(0,J.jsxs)(tw,{children:[(0,J.jsx)(Mc,{currentProduct:`admin-center`,onProductChange:()=>{}}),(0,J.jsxs)(nw,{children:[(0,J.jsxs)(rw,{children:[(0,J.jsx)(Jc,{currentProduct:`admin-center`,activeNavItem:e,setActiveNavItem:t,isSubnavExpanded:n,setIsSubnavExpanded:r}),(0,J.jsx)(Qu,{currentItem:i,onSelect:a})]}),(0,J.jsx)(iw,{"data-comment-root":`true`,children:(0,J.jsx)($C,{version:c})})]})]}),(0,J.jsx)(Ru,{toggleContainer:o,context:{version:c},onRestoreContext:e=>{(e.version===`v1`||e.version===`v2`||e.version===`v2.1`)&&l(e.version)}})]})})}(0,_.createRoot)(document.getElementById(`root`)).render((0,J.jsx)(g.StrictMode,{children:(0,J.jsx)(aw,{})}));
