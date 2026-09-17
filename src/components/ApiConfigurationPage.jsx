@@ -17,6 +17,7 @@ import {
   Close,
 } from '@zendeskgarden/react-modals'
 import { Table } from '@zendeskgarden/react-tables'
+import { Tag } from '@zendeskgarden/react-tags'
 import { MD, SM } from '@zendeskgarden/react-typography'
 import PartnersSavedToast from './PartnersSavedToast'
 import { partnersForVersion } from '../data/partners'
@@ -40,10 +41,18 @@ function formatExpirationDate(date) {
   return `${MONTHS_SHORT[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
 
-function expirationIn60Days(from = new Date()) {
+function expirationDateIn60Days(from = new Date()) {
   const d = new Date(from)
   d.setDate(d.getDate() + 60)
-  return formatExpirationDate(d)
+  d.setHours(0, 0, 0, 0)
+  return d
+}
+
+/** Granted until end of expiration day; Expired after that. */
+function extensionStatus(expiresAt) {
+  const end = new Date(expiresAt)
+  end.setHours(23, 59, 59, 999)
+  return new Date() > end ? 'Expired' : 'Granted'
 }
 
 const Page = styled.div`
@@ -341,13 +350,14 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
       return
     }
 
-    const expirationDate = expirationIn60Days()
+    const expiresAt = expirationDateIn60Days()
     const additions = catalog
       .filter((p) => selectedIds.includes(p.id) && !addedIds.has(p.id))
       .map((p) => ({
         id: p.id,
         name: p.name,
-        expirationDate,
+        expiresAt: expiresAt.toISOString(),
+        expirationDate: formatExpirationDate(expiresAt),
       }))
 
     if (additions.length === 0) {
@@ -484,13 +494,14 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                   <Table.Head>
                     <Table.HeaderRow>
                       <Table.HeaderCell>Partner</Table.HeaderCell>
-                      <Table.HeaderCell>Expiration date</Table.HeaderCell>
+                      <Table.HeaderCell>Extension status</Table.HeaderCell>
+                      <Table.HeaderCell>Extension expires</Table.HeaderCell>
                     </Table.HeaderRow>
                   </Table.Head>
                   <Table.Body>
                     {partners.length === 0 ? (
                       <Table.Row>
-                        <Table.Cell colSpan={2}>
+                        <Table.Cell colSpan={3}>
                           <EmptyCell>
                             <EmptyTitle>No partners with an extension</EmptyTitle>
                             <SM tag="div">
@@ -500,12 +511,18 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                         </Table.Cell>
                       </Table.Row>
                     ) : (
-                      partners.map((partner) => (
-                        <Table.Row key={partner.id}>
-                          <Table.Cell>{partner.name}</Table.Cell>
-                          <Table.Cell>{partner.expirationDate}</Table.Cell>
-                        </Table.Row>
-                      ))
+                      partners.map((partner) => {
+                        const status = extensionStatus(partner.expiresAt)
+                        return (
+                          <Table.Row key={partner.id}>
+                            <Table.Cell>{partner.name}</Table.Cell>
+                            <Table.Cell>
+                              <Tag hue={status === 'Granted' ? 'green' : 'grey'}>{status}</Tag>
+                            </Table.Cell>
+                            <Table.Cell>{partner.expirationDate}</Table.Cell>
+                          </Table.Row>
+                        )
+                      })
                     )}
                   </Table.Body>
                 </Table>
