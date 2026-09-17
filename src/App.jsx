@@ -72,7 +72,7 @@ function App() {
   const [isSubnavExpanded, setIsSubnavExpanded] = useState(false)
   const [currentSubnavItem, setCurrentSubnavItem] = useState('api-configuration')
   const [commentSlot, setCommentSlot] = useState(null)
-  const [version, setVersion] = useState('v1')
+  const [version, setVersion] = useState('v2')
 
   return (
     <ThemeProvider>
