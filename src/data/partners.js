@@ -41,6 +41,37 @@ export const VERSIONS = [
   { id: 'v2.1', label: 'Version 2.1', description: 'Expiration' },
 ]
 
+/**
+ * Blocking / extension phase windows.
+ * Phase 2 informed date is TBD.
+ * March 6, 2027 is the hard stop — extensions may land outside a phase
+ * window, but not beyond this date. Only partners with an extension appear.
+ */
+export const PHASES = {
+  phase1: {
+    id: 'phase1',
+    informedOn: '2026-09-22',
+    /** Sept 22 + 60 days */
+    windowEnds: '2026-11-21',
+  },
+  // phase2: { informedOn: TBD, windowEnds: TBD },
+  phase3: {
+    id: 'phase3',
+    informedOn: '2026-10-27',
+    /** Oct 27 + 60 days */
+    windowEnds: '2026-12-26',
+  },
+  /** Final day when all phases are done; max extension end. */
+  programEnds: '2027-03-06',
+}
+
+/**
+ * V2.1 status is evaluated as of this date so Phase 1 shows Expired while
+ * Phase 3 (still in window) and post-window extensions stay Granted.
+ * (Wall-clock “today” is still before Phase 1 starts.)
+ */
+export const V21_STATUS_AS_OF = '2026-12-01'
+
 const MONTHS_SHORT = [
   'Jan',
   'Feb',
@@ -65,33 +96,47 @@ function atLocalNoon(isoDate) {
   return new Date(y, m - 1, d, 12, 0, 0, 0)
 }
 
-function toPartnerRow(partner, isoDate) {
+function toPartnerRow(partner, { isoDate, phase }) {
   const expiresAt = atLocalNoon(isoDate)
   return {
     id: partner.id,
     name: partner.name,
+    phase,
     expiresAt: expiresAt.toISOString(),
     expirationDate: formatExpirationDate(expiresAt),
   }
 }
 
 /**
- * Ten seeded partners for V2 / V2.1.
- * - First 3 + last 4: phase 1 (same expiration date)
- * - Middle 3: requested after their window (different expiration date)
- *
- * V2: phase 1 date is still in the future → all Granted.
- * V2.1: phase 1 date is past → Expired; post-window three stay Granted.
+ * Ten seeded partners for V2 / V2.1 (only those with an extension).
+ * Mixed order — not grouped by phase in the table.
+ * - 4 × Phase 1 → window end Nov 21, 2026
+ * - 3 × Phase 3 → window end Dec 26, 2026
+ * - 3 × after-window → March 6, 2027 (program hard stop)
  */
 export function seededPartnersForVersion(versionId) {
-  const phase1Iso = versionId === 'v2.1' ? '2026-07-19' : '2026-11-16'
-  const postWindowIso = '2027-01-15'
+  void versionId
+  const phase1 = PHASES.phase1.windowEnds
+  const phase3 = PHASES.phase3.windowEnds
+  const afterWindow = PHASES.programEnds
   const ten = V2_PARTNERS.slice(0, 10)
 
-  return ten.map((partner, index) => {
-    const isPostWindow = index >= 3 && index <= 5
-    return toPartnerRow(partner, isPostWindow ? postWindowIso : phase1Iso)
-  })
+  // Indices: 0–3 phase1, 4–6 phase3, 7–9 after-window — then shuffle display
+  // order so post-window rows sit among phase partners.
+  const specs = [
+    { partner: ten[0], isoDate: phase1, phase: 'phase1' },
+    { partner: ten[7], isoDate: afterWindow, phase: 'after-window' },
+    { partner: ten[1], isoDate: phase1, phase: 'phase1' },
+    { partner: ten[4], isoDate: phase3, phase: 'phase3' },
+    { partner: ten[2], isoDate: phase1, phase: 'phase1' },
+    { partner: ten[8], isoDate: afterWindow, phase: 'after-window' },
+    { partner: ten[5], isoDate: phase3, phase: 'phase3' },
+    { partner: ten[3], isoDate: phase1, phase: 'phase1' },
+    { partner: ten[9], isoDate: afterWindow, phase: 'after-window' },
+    { partner: ten[6], isoDate: phase3, phase: 'phase3' },
+  ]
+
+  return specs.map(({ partner, isoDate, phase }) => toPartnerRow(partner, { isoDate, phase }))
 }
 
 export function partnersForVersion(versionId) {

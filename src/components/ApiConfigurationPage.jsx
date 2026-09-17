@@ -20,7 +20,13 @@ import { Table } from '@zendeskgarden/react-tables'
 import { Tag } from '@zendeskgarden/react-tags'
 import { MD, SM } from '@zendeskgarden/react-typography'
 import PartnersSavedToast from './PartnersSavedToast'
-import { partnersForVersion, seededPartnersForVersion, isComboboxVersion } from '../data/partners'
+import {
+  partnersForVersion,
+  seededPartnersForVersion,
+  isComboboxVersion,
+  V21_STATUS_AS_OF,
+  PHASES,
+} from '../data/partners'
 
 const MONTHS_SHORT = [
   'Jan',
@@ -45,14 +51,19 @@ function expirationDateIn60Days(from = new Date()) {
   const d = new Date(from)
   d.setDate(d.getDate() + 60)
   d.setHours(0, 0, 0, 0)
-  return d
+  const programEnd = (() => {
+    const [y, m, day] = PHASES.programEnds.split('-').map(Number)
+    return new Date(y, m - 1, day, 0, 0, 0, 0)
+  })()
+  return d > programEnd ? programEnd : d
 }
 
 /** Granted until end of expiration day; Expired after that. */
-function extensionStatus(expiresAt) {
+function extensionStatus(expiresAt, asOf = new Date()) {
   const end = new Date(expiresAt)
   end.setHours(23, 59, 59, 999)
-  return new Date() > end ? 'Expired' : 'Granted'
+  const now = asOf instanceof Date ? asOf : new Date(asOf)
+  return now > end ? 'Expired' : 'Granted'
 }
 
 const Page = styled.div`
@@ -696,7 +707,9 @@ export const ApiConfigurationPage = ({ version = 'v2' }) => {
                       </Table.Row>
                     ) : (
                       partners.map((partner) => {
-                        const status = extensionStatus(partner.expiresAt)
+                        const statusAsOf =
+                          version === 'v2.1' ? V21_STATUS_AS_OF : undefined
+                        const status = extensionStatus(partner.expiresAt, statusAsOf)
                         return (
                           <Table.Row key={partner.id}>
                             <Table.Cell>{partner.name}</Table.Cell>
