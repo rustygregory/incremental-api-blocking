@@ -259,6 +259,37 @@ const StatusTag = styled(Tag)`
 
 const ComboboxWrap = styled.div`
   margin-top: 16px;
+
+  /* Flora combobox + multiselect tags (forms use square subtle tags). */
+  [data-garden-id='dropdowns.combobox.trigger'] {
+    border-radius: 12px;
+    border-color: #b7b7b3;
+    color: #2f3130;
+
+    &:hover {
+      border-color: #8b8e89;
+    }
+  }
+
+  [data-garden-id='dropdowns.combobox.tag'] {
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    color: #2f3130;
+  }
+
+  [data-garden-id='dropdowns.combobox.tags_button'] {
+    color: #406cc4;
+    font-weight: 600;
+
+    &:hover {
+      color: #284173;
+      text-decoration: underline;
+    }
+  }
+
+  [data-garden-id='dropdowns.combobox.label'] {
+    color: #2f3130;
+  }
 `
 
 const ModalEmptyState = styled.div`
@@ -709,13 +740,15 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                   <Combobox
                     isAutocomplete
                     isMultiselectable
-                    maxTags={4}
-                    renderExpandTags={(hiddenCount) => `+ ${hiddenCount} more`}
+                    maxTags={1}
+                    renderExpandTags={(hiddenCount) =>
+                      `+${hiddenCount} partner${hiddenCount === 1 ? '' : 's'}`
+                    }
                     listboxAppendToNode={document.body}
                     listboxMaxHeight="400px"
                     listboxZIndex={12000}
                     listboxAriaLabel="Partners"
-                    placeholder="Search partners"
+                    placeholder={selectedIds.length > 0 ? '' : 'Search partners'}
                     inputValue={searchValue}
                     selectionValue={selectedIds}
                     onChange={({ inputValue, selectionValue }) => {
@@ -735,7 +768,7 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                         const matches =
                           !query || partner.name.toLowerCase().includes(query)
                         const isSelected = selectedIds.includes(partner.id)
-                        // Keep selected options mounted (hidden) so tags / "+ N more"
+                        // Keep selected options mounted (hidden) so tags / "+ N partners"
                         // still count them when search filters the list.
                         if (!matches && !isSelected) return null
                         return (
@@ -744,6 +777,7 @@ export const ApiConfigurationPage = ({ version = 'v1' }) => {
                             value={partner.id}
                             label={partner.name}
                             isHidden={!matches}
+                            tagProps={{ isPill: false }}
                           />
                         )
                       })
