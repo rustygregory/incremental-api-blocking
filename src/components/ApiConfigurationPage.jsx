@@ -22,6 +22,7 @@ import { MD, SM } from '@zendeskgarden/react-typography'
 import PartnersSavedToast from './PartnersSavedToast'
 import {
   partnersForVersion,
+  partnerAppOptionsForVersion,
   seededPartnersForVersion,
   isComboboxVersion,
   V21_STATUS_AS_OF,
@@ -467,7 +468,8 @@ const Footer = styled.footer`
 `
 
 export const ApiConfigurationPage = ({ version = 'v2' }) => {
-  const catalog = useMemo(() => partnersForVersion(version), [version])
+  const partnersCatalog = useMemo(() => partnersForVersion(version), [version])
+  const catalog = useMemo(() => partnerAppOptionsForVersion(version), [version])
   const isV2 = isComboboxVersion(version)
 
   const [passwordAccess, setPasswordAccess] = useState(true)
@@ -501,10 +503,11 @@ export const ApiConfigurationPage = ({ version = 'v2' }) => {
     }))
   }, [])
 
-  const addedIds = useMemo(() => new Set(partners.map((p) => p.id)), [partners])
+  // Extension covers the whole OAuth suite — hide every app for partners already added.
+  const addedPartnerIds = useMemo(() => new Set(partners.map((p) => p.id)), [partners])
   const availableToAdd = useMemo(
-    () => catalog.filter((p) => !addedIds.has(p.id)),
-    [catalog, addedIds],
+    () => catalog.filter((option) => !addedPartnerIds.has(option.partnerId)),
+    [catalog, addedPartnerIds],
   )
 
   const openModal = () => {
@@ -544,9 +547,19 @@ export const ApiConfigurationPage = ({ version = 'v2' }) => {
       return
     }
 
+    const selectedOptions = catalog.filter((option) => selectedIds.includes(option.id))
+    const partnerIdsToAdd = [
+      ...new Set(
+        selectedOptions
+          .map((option) => option.partnerId)
+          .filter((partnerId) => !addedPartnerIds.has(partnerId)),
+      ),
+    ]
+
     const expiresAt = expirationDateIn60Days()
-    const additions = catalog
-      .filter((p) => selectedIds.includes(p.id) && !addedIds.has(p.id))
+    const additions = partnerIdsToAdd
+      .map((partnerId) => partnersCatalog.find((p) => p.id === partnerId))
+      .filter(Boolean)
       .map((p) => ({
         id: p.id,
         name: p.name,
@@ -789,19 +802,19 @@ export const ApiConfigurationPage = ({ version = 'v2' }) => {
                     {availableToAdd.length === 0 ? (
                       <Option isDisabled value="__no-matches" label="No matches found" />
                     ) : (
-                      availableToAdd.map((partner) => {
+                      availableToAdd.map((option) => {
                         const query = searchValue.trim().toLowerCase()
                         const matches =
-                          !query || partner.name.toLowerCase().includes(query)
-                        const isSelected = selectedIds.includes(partner.id)
+                          !query || option.label.toLowerCase().includes(query)
+                        const isSelected = selectedIds.includes(option.id)
                         // Keep selected options mounted (hidden) so tags / "+ N partners"
                         // still count them when search filters the list.
                         if (!matches && !isSelected) return null
                         return (
                           <Option
-                            key={partner.id}
-                            value={partner.id}
-                            label={partner.name}
+                            key={option.id}
+                            value={option.id}
+                            label={option.label}
                             isHidden={!matches}
                             tagProps={{ isPill: false }}
                           />
@@ -825,14 +838,14 @@ export const ApiConfigurationPage = ({ version = 'v2' }) => {
                   </Field>
                   <PartnerListHeaderLabel>Partners</PartnerListHeaderLabel>
                 </PartnerListHeader>
-                {availableToAdd.map((partner) => (
-                  <PartnerOption key={partner.id}>
+                {availableToAdd.map((option) => (
+                  <PartnerOption key={option.id}>
                     <Field>
                       <Checkbox
-                        checked={selectedIds.includes(partner.id)}
-                        onChange={() => toggleSelected(partner.id)}
+                        checked={selectedIds.includes(option.id)}
+                        onChange={() => toggleSelected(option.id)}
                       >
-                        <Label isRegular>{partner.name}</Label>
+                        <Label isRegular>{option.label}</Label>
                       </Checkbox>
                     </Field>
                   </PartnerOption>

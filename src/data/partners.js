@@ -1,38 +1,66 @@
-/** Partners available in Version 1 (checkbox modal). */
+/** App names used across partner OAuth suites in the account. */
+const APP_POOL = [
+  'Calendar',
+  'Time saver',
+  'Support desk',
+  'Analytics',
+  'Chat',
+  'Ticketing',
+  'Reports',
+  'Mobile',
+  'Knowledge base',
+  'Notifications',
+  'Workflows',
+  'Insights',
+]
+
+function appsFor(count, offset = 0) {
+  const apps = []
+  for (let i = 0; i < count; i += 1) {
+    apps.push(APP_POOL[(offset + i) % APP_POOL.length])
+  }
+  return apps
+}
+
+function slugify(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
+/** Partners available in Version 1 (checkbox modal). Each has 2+ apps. */
 export const V1_PARTNERS = [
-  { id: 'acme-support', name: 'Acme Support' },
-  { id: 'northstar-labs', name: 'Northstar Labs' },
-  { id: 'bluebird-health', name: 'Bluebird Health' },
-  { id: 'contoso-services', name: 'Contoso Services' },
+  { id: 'acme-support', name: 'Acme Support', apps: appsFor(3, 0) },
+  { id: 'northstar-labs', name: 'Northstar Labs', apps: appsFor(2, 2) },
+  { id: 'bluebird-health', name: 'Bluebird Health', apps: appsFor(4, 4) },
+  { id: 'contoso-services', name: 'Contoso Services', apps: appsFor(5, 1) },
 ]
 
 /** Partners available in Version 2 / 2.1 (searchable multiselect Combobox). */
 export const V2_PARTNERS = [
-  { id: 'acme-support', name: 'Acme Support' },
-  { id: 'northstar-labs', name: 'Northstar Labs' },
-  { id: 'bluebird-health', name: 'Bluebird Health' },
-  { id: 'contoso-services', name: 'Contoso Services' },
-  { id: 'apex-digital', name: 'Apex Digital' },
-  { id: 'brightline-systems', name: 'Brightline Systems' },
-  { id: 'cascade-analytics', name: 'Cascade Analytics' },
-  { id: 'cobalt-communications', name: 'Cobalt Communications' },
-  { id: 'deltaforge', name: 'Deltaforge' },
-  { id: 'evergreen-ops', name: 'Evergreen Ops' },
-  { id: 'frontier-metrics', name: 'Frontier Metrics' },
-  { id: 'harbor-cloud', name: 'Harbor Cloud' },
-  { id: 'ironclad-software', name: 'Ironclad Software' },
-  { id: 'juniper-data', name: 'Juniper Data' },
-  { id: 'keystone-platforms', name: 'Keystone Platforms' },
-  { id: 'lumen-bridge', name: 'Lumen Bridge' },
-  { id: 'meridian-tech', name: 'Meridian Tech' },
-  { id: 'nimbus-works', name: 'Nimbus Works' },
-  { id: 'orbit-solutions', name: 'Orbit Solutions' },
-  { id: 'pinnacle-partner', name: 'Pinnacle Partner' },
-  { id: 'quantum-relay', name: 'Quantum Relay' },
-  { id: 'redwood-integrations', name: 'Redwood Integrations' },
-  { id: 'summit-channel', name: 'Summit Channel' },
-  { id: 'truenorth-apps', name: 'TrueNorth Apps' },
-  { id: 'vertex-alliance', name: 'Vertex Alliance' },
+  { id: 'acme-support', name: 'Acme Support', apps: appsFor(3, 0) },
+  { id: 'northstar-labs', name: 'Northstar Labs', apps: appsFor(2, 2) },
+  { id: 'bluebird-health', name: 'Bluebird Health', apps: appsFor(4, 4) },
+  { id: 'contoso-services', name: 'Contoso Services', apps: appsFor(5, 1) },
+  { id: 'apex-digital', name: 'Apex Digital', apps: appsFor(2, 3) },
+  { id: 'brightline-systems', name: 'Brightline Systems', apps: appsFor(6, 5) },
+  { id: 'cascade-analytics', name: 'Cascade Analytics', apps: appsFor(3, 6) },
+  { id: 'cobalt-communications', name: 'Cobalt Communications', apps: appsFor(2, 8) },
+  { id: 'deltaforge', name: 'Deltaforge', apps: appsFor(4, 0) },
+  { id: 'evergreen-ops', name: 'Evergreen Ops', apps: appsFor(5, 2) },
+  { id: 'frontier-metrics', name: 'Frontier Metrics', apps: appsFor(2, 7) },
+  { id: 'harbor-cloud', name: 'Harbor Cloud', apps: appsFor(3, 9) },
+  { id: 'ironclad-software', name: 'Ironclad Software', apps: appsFor(6, 1) },
+  { id: 'juniper-data', name: 'Juniper Data', apps: appsFor(2, 4) },
+  { id: 'keystone-platforms', name: 'Keystone Platforms', apps: appsFor(4, 10) },
+  { id: 'lumen-bridge', name: 'Lumen Bridge', apps: appsFor(3, 0) },
+  { id: 'meridian-tech', name: 'Meridian Tech', apps: appsFor(5, 3) },
+  { id: 'nimbus-works', name: 'Nimbus Works', apps: appsFor(2, 6) },
+  { id: 'orbit-solutions', name: 'Orbit Solutions', apps: appsFor(3, 8) },
+  { id: 'pinnacle-partner', name: 'Pinnacle Partner', apps: appsFor(4, 2) },
+  { id: 'quantum-relay', name: 'Quantum Relay', apps: appsFor(2, 11) },
+  { id: 'redwood-integrations', name: 'Redwood Integrations', apps: appsFor(6, 4) },
+  { id: 'summit-channel', name: 'Summit Channel', apps: appsFor(3, 7) },
+  { id: 'truenorth-apps', name: 'TrueNorth Apps', apps: appsFor(5, 0) },
+  { id: 'vertex-alliance', name: 'Vertex Alliance', apps: appsFor(2, 5) },
 ]
 
 export const VERSIONS = [
@@ -44,8 +72,8 @@ export const VERSIONS = [
 /**
  * Blocking / extension phase windows.
  * Phase 2 informed date is TBD.
- * March 6, 2027 is the hard stop — extensions may land outside a phase
- * window, but not beyond this date. Only partners with an extension appear.
+ * Extensions may land outside a phase window, but not beyond programEnds.
+ * Only partners with an extension appear in the configuration table.
  */
 export const PHASES = {
   phase1: {
@@ -108,6 +136,23 @@ function toPartnerRow(partner, { isoDate, phase }) {
 }
 
 /**
+ * Flatten partners into modal options: "Partner - App".
+ * One extension covers the whole OAuth suite, so after save every app for
+ * that partner is removed from the add list.
+ */
+export function partnerAppOptions(partners) {
+  return partners.flatMap((partner) =>
+    (partner.apps || []).map((appName) => ({
+      id: `${partner.id}__${slugify(appName)}`,
+      partnerId: partner.id,
+      partnerName: partner.name,
+      appName,
+      label: `${partner.name} - ${appName}`,
+    })),
+  )
+}
+
+/**
  * Ten seeded partners for Version 2.1 only (V2 starts empty).
  * Mixed order — not grouped by phase in the table.
  * - 4 × Phase 1 → window end Nov 21, 2026
@@ -122,8 +167,6 @@ export function seededPartnersForVersion(versionId) {
   const afterWindow = PHASES.programEnds
   const ten = V2_PARTNERS.slice(0, 10)
 
-  // Indices: 0–3 phase1, 4–6 phase3, 7–9 after-window — then shuffle display
-  // order so post-window rows sit among phase partners.
   const specs = [
     { partner: ten[0], isoDate: phase1, phase: 'phase1' },
     { partner: ten[7], isoDate: afterWindow, phase: 'after-window' },
@@ -142,6 +185,10 @@ export function seededPartnersForVersion(versionId) {
 
 export function partnersForVersion(versionId) {
   return versionId === 'v2' || versionId === 'v2.1' ? V2_PARTNERS : V1_PARTNERS
+}
+
+export function partnerAppOptionsForVersion(versionId) {
+  return partnerAppOptions(partnersForVersion(versionId))
 }
 
 export function isComboboxVersion(versionId) {
