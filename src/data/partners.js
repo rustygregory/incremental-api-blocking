@@ -64,9 +64,9 @@ export const V2_PARTNERS = [
 ]
 
 export const VERSIONS = [
-  { id: 'v1', label: 'Version 1', description: 'Checkbox modal' },
   { id: 'v2', label: 'Version 2', description: 'Searchable multiselect' },
   { id: 'v2.1', label: 'Version 2.1', description: 'Expiration' },
+  { id: 'v1', label: 'Version 1', description: 'Checkbox modal', archived: true },
 ]
 
 /**
